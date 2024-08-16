@@ -7,7 +7,7 @@
 
 <p align="left"> <a href="https://twitter.com/pawanesh_in" target="blank"><img src="https://img.shields.io/twitter/follow/pawanesh_in?logo=twitter&style=for-the-badge" alt="pawanesh_in" /></a> </p>
 
-- 🔭 I’m currently working on **MNNIT Allahabad**
+- 🔭 I’m currently working at **MNNIT Allahabad**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
