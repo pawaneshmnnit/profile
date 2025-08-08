@@ -1,191 +1,634 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Tabs</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        margin: 0;
-        padding: 0;
-    }
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pawanesh Portfolio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Pawanesh - Software Developer - Portfolio"/>
+	<meta name="keywords" content="Pawanesh, Portfolio, Software Developer, Pawanesh" />
+	<meta name="author" content="Pawanesh"/>
+	<meta property="og:title" content="Pawanesh - Portfolio"/>
+	<meta property="og:image" content="/images/ss2.png"/>
+	<meta property="og:site_name" content="Pawanesh - Portfolio"/>
+	<meta property="og:description" content="Pawanesh - Software Developer - Portfolio"/>
+	<meta name="twitter:title" content="Pawanesh Twitter" />
+	<link rel="icon" href="images/ico.png">
+	<link rel="shortcut icon" href="favicon.ico">
 
-    .portfolio {
-        max-width: 900px;
-        margin: 50px auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
+	<!-- External CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style1.css">
 
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    /* Tabs container */
-    .tabs {
-        display: flex;
-        border-bottom: 2px solid #ddd;
-        margin-bottom: 20px;
-    }
-
-    .tab {
-        flex: 1;
-        text-align: center;
-        padding: 12px;
-        cursor: pointer;
-        font-weight: bold;
-        background: #f0f0f0;
-        transition: 0.3s;
-    }
-
-    .tab.active {
-        background: #007bff;
-        color: white;
-    }
-
-    .tab:hover {
-        background: #e0e0e0;
-    }
-
-    /* Tab content */
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .tab-content.active {
-        display: block;
-    }
-
-    /* Portfolio grid */
-    .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .portfolio-item {
-        background: #fafafa;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover {
-        transform: translateY(-5px);
-    }
-
-    .portfolio-item img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-    }
-
-    .portfolio-item h4 {
-        margin: 10px;
-    }
-
-    .portfolio-item p {
-        margin: 0 10px 10px;
-        font-size: 0.9em;
-        color: #555;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-</style>
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
+<body style="background-image: url('images/bg.png');">
 
-<div class="portfolio">
-    <h2>Pawanesh Kumar Vishwakarma</h2>
-    <p>Ph.D. Scholar, Motila Nehru National Institute of Technology Allahabad</p>
+    <!-- Header / Nav -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#training">Training</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Tabs -->
-    <div class="tabs">
-        <div class="tab active" data-tab="all">Personal Details</div>
-        <div class="tab" data-tab="web">Education Details</div>
-        <div class="tab" data-tab="app">Technical Skills</div>
-        <div class="tab" data-tab="graphics">Publications</div>
-    </div>
+	<!-- Decorative boxes (kept from original) -->
+	<div class="" style="color: #191a15;">.</div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
 
-    <!-- Tab Content -->
-    <div class="tab-content active" id="all">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>Project 1</h4>
-                <p>Web Design</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>Project 2</h4>
-                <p>App Development</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>Project 3</h4>
-                <p>Graphics</p>
-            </div>
-        </div>
-    </div>
+	<!-- Portfolio Tabbed Layout (merged & fixed) -->
+	<div id="port-wrapper">
+		<div id="port-main">
+			<div class="port-tab-wrap">
+				<ul class="port-tab-menu">
+					<li class="active"><a href="#" data-tab="1"><span class="icon icon-user"></span><span class="menu-text">Profile</span></a></li>
+					<li><a href="#" data-tab="2"><span class="icon icon-lightbulb-o"></span><span class="menu-text">Experience</span></a></li>
+					<li><a href="#" data-tab="3"><span class="icon icon-graduation-cap"></span><span class="menu-text">Education</span></a></li>
+					<li><a href="#" data-tab="4"><span class="icon icon-black-tie"></span><span class="menu-text">Training</span></a></li>
+					<li><a href="#" data-tab="5"><span class="icon icon-lightbulb-o"></span><span class="menu-text">Projects</span></a></li>
+					<li><a href="#" data-tab="6" data-pie="yes"><span class="icon icon-list"></span><span class="menu-text">Skills</span></a></li>
+				</ul>
 
-    <div class="tab-content" id="web">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>Web Project A</h4>
-                <p>Landing Page Design</p>
-            </div>
-        </div>
-    </div>
+				<!-- Tab 1: Profile -->
+				<div class="port-tab-content active" data-content="1">
+					<div class="port-content-inner text-center">
+						<div class="row row-bottom-padded-sm">
+							<div class="col-md-12">
+								<figure>
+									<img src="images/profile4.png" style="border-radius:50px 0px 50px 0px;" alt="Pawanesh Profile Picture" class="profile-img"/>
+								</figure>
+								<h1>Pawanesh Vishwakarma</h1>
+								<h4>MOTILAL NEHRU NATIONAL INSTITUTE OF TECHNOLOGY ALLAHABAD</h4>
+								<p class="font-normal">I am growing as an Assistant Professor and specialization in Computer Science and Application.<br/>
+									<b>Recent Qualifications:</b>
+								</p>
+							</div>
+						</div>
 
-    <div class="tab-content" id="app">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>App Project A</h4>
-                <p>Mobile App UI</p>
-            </div>
-        </div>
-    </div>
+						<div class="row">
+							<div class="col-md-4">
+								<a href="#">
+									<img src="MNNIT.png" alt="MNNIT" height="80" width="80">
+								</a>
+							</div>
+							<div class="col-md-6">
+								<p class="font-bold font-normal margin-10-0-5-0">Doctor of Philosophy- Computer Science and Engineering</p>
+								<p class="font-minute">July 2023 - Present</p>
+							</div>
+						</div>
 
-    <div class="tab-content" id="graphics">
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="https://via.placeholder.com/400x200" alt="Project">
-                <h4>Graphics Project A</h4>
-                <p>Poster Design</p>
-            </div>
-        </div>
-    </div>
-</div>
+						<div class="row">
+							<div class="col-md-4 col-sm-12 port-counter left-border">
+								<div class="row">
+									<div class="col-md-4">
+										<a href="https://rmlau.ac.in/">
+											<img src="images/logo_uni.png" alt="Avadh University" height="80" width="80" class="margin-top-15"/>
+										</a>
+									</div>
+									<div class="col-md-4">
+										<p class="font-bold font-normal margin-10-0-5-0">Master of Computer Application (MCA)</p>
+										<p class="font-minute">July 2019 - December 2021</p>
+									</div>
+								</div>
 
-<script>
-    const tabs = document.querySelectorAll(".tab");
-    const tabContents = document.querySelectorAll(".tab-content");
+								<div class="row" style="margin-top:15px;">
+									<div class="col-md-4">
+										<a href="#">
+											<img src="images/logo_uni.png" alt="Avadh University" height="80" width="80"/>
+										</a>
+									</div>
+									<div class="col-md-6">
+										<p class="font-bold font-normal margin-10-0-5-0">Bachelor of Computer Application (BCA)</p>
+										<p class="font-minute">July 2016 - July 2019</p>
+									</div>
+								</div>
 
-    tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            tabs.forEach(t => t.classList.remove("active"));
-            tab.classList.add("active");
+							</div>
+						</div>
 
-            tabContents.forEach(content => {
-                content.classList.remove("active");
-            });
+					</div>
+				</div>
 
-            document.getElementById(tab.dataset.tab).classList.add("active");
-        });
-    });
-</script>
+				<!-- Tab 2: Experience -->
+				<div class="port-tab-content" data-content="2">
+					<div class="port-content-inner">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="port-text">
+										<h2>Fresher</h2>
+										<p class="font-behemoth margin-5-0-5-0">Looking for Lecture Assistantship in Computer Science and Application</p>
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab 3: Education -->
+				<div class="port-tab-content" data-content="3">
+					<div class="port-content-inner">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="font-big margin-less-bot">Master of Computer Application (MCA)</p>
+								<p class="font-behemoth font-bold">Major: Computer Application</p>
+
+								<div class="port-feature">
+									<div>
+										<div class="port-icon">
+											<i class="icon-graduation-cap"></i>
+										</div>
+										<div class="port-text row">
+											<div class="col col-sm-9">
+												<h2 class="pad-bot-10">2019-2021</h2>
+												<p class="font-normal margin-less-bot">IET, Dr Rammanohar Lohia Avadh University Ayodhya</p>
+												<p class="font-normal margin-less-bot">Master of Computer Application</p>
+												<p class="font-normal margin-less-bot">Computer Application</p>
+											</div>
+											<div class="col col-sm-3">
+												<div class="port-grades port-left">78%</div>
+											</div>
+										</div>
+									</div>
+
+									<div>
+										<div class="row coursework-asu coursework" >
+											<small class="small-small">
+												<p class="font-normal margin-10-0-5-0">Coursework:</p>
+												<ul>
+													<li>Advanced Algorithms</li>
+													<li>Python</li>
+													<li>Machine Learning</li>
+													<li>Natural Language Processing</li>
+													<li>Big Data</li>
+													<li>Software Engineering</li>
+													<li>Operating Systems</li>
+													<li>Database Management Systems</li>
+													<li>Android Application</li>
+													<li>PHP</li>
+												</ul>
+											</small>
+										</div>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature">
+									<div>
+										<div class="port-icon">
+											<i class="icon-graduation-cap"></i>
+										</div>
+										<div class="port-text row">
+											<div class="col col-sm-9">
+												<h2 class="pad-bot-10">2016-2019</h2>
+												<p class="font-normal margin-less-bot">Dr Rammanohar Lohia Avadh University Ayodhya</p>
+												<p class="font-normal margin-less-bot">Bachelor of Computer Application</p>
+												<p class="font-normal margin-less-bot">Computer Application</p>
+											</div>
+											<div class="col col-sm-3">
+												<div class="port-grades port-left">73.44%</div>
+											</div>
+										</div>
+									</div>
+
+									<div>
+										<div class="row coursework-asu coursework" >
+											<small class="small-small">
+												<p class="font-normal margin-10-0-5-0">Coursework:</p>
+												<ul>
+													<li>Computer Fundamental</li>
+													<li>DSA</li>
+													<li>C</li>
+													<li>C++</li>
+													<li>Object Oriented Programming System</li>
+													<li>Software Engineering</li>
+													<li>Operating Systems</li>
+													<li>Database Management Systems</li>
+													<li>Computer Graphics</li>
+													<li>Optimization Technique</li>
+												</ul>
+											</small>
+										</div>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-graduation-cap"></i>
+									</div>
+									<div class="port-text row">
+										<div class="col col-sm-9">
+											<h2>2014-2016</h2>
+											<p class="font-normal close-knit">R M I C Siddharth Nagar</p>
+											<p class="font-normal close-knit">Intermediate (12th)</p>
+										</div>
+										<div class="col col-sm-3">
+											<div class="port-grades port-left">74.20%</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-graduation-cap"></i>
+									</div>
+									<div class="port-text row">
+										<div class="col col-sm-9">
+											<h2>2012-2014</h2>
+											<p class="font-normal close-knit">R B I C Siddharth Nagar</p>
+											<p class="font-normal close-knit">High School (10th)</p>
+										</div>
+										<div class="col col-sm-3">
+											<div class="port-grades port-left">86.83%</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab 4: Training -->
+				<div class="port-tab-content" data-content="4">
+					<div class="port-content-inner">
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="port-text">
+										<h2>June 15, 2018 - July 31, 2018</h2>
+										<p class="font-behemoth margin-5-0-5-0">Summer Training on JAVA</p>
+										<p class="font-big margin-5-0-5-0 font-bold">Softpro India</p>
+										<small class="small-small">
+											<p class="font-normal margin-10-0-5-0 font-bold">Technologies:</p>
+											<ul>
+												<li>HTML, CSS, JavaScript, Bootstrap</li>
+												<li>Java</li>
+												<li>MySQL</li>
+												<li>JQuery</li>
+											</ul>
+										</small>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="port-text">
+										<h2>June, 2020 - July, 2020</h2>
+										<p class="font-behemoth margin-5-0-5-0">Android Application Development</p>
+										<p class="font-big margin-5-0-5-0 font-bold">Internshala Trainings</p>
+										<small class="small-small">
+											<p class="font-normal margin-10-0-5-0 font-bold">Technologies:</p>
+											<ul>
+												<li>Android</li>
+												<li>Kotlin</li>
+												<li>XML</li>
+												<li>SQLite</li>
+											</ul>
+										</small>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-black-tie"></i>
+									</div>
+									<div class="port-text">
+										<h2>Feb, 2021 - March, 2021</h2>
+										<p class="font-behemoth margin-5-0-5-0">Programming with Python</p>
+										<p class="font-big margin-5-0-5-0 font-bold">Internshala Trainings</p>
+										<small class="small-small">
+											<p class="font-normal margin-10-0-5-0 font-bold">Technologies:</p>
+											<ul>
+												<li>Python</li>
+												<li>SQLite</li>
+												<li>PyQT</li>
+											</ul>
+										</small>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab 5: Projects -->
+				<div class="port-tab-content" data-content="5">
+					<div class="port-content-inner">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="port-feature">
+									<div class="port-icon">
+										<i class="icon-lightbulb-o"></i>
+									</div>
+									<div class="port-text">
+										<div style="overflow: hidden;">
+											<p class="font-minute margin-less-bot" style="float: left;">2021</p>
+											<a href="https://github.com/pawanesh97/IET-MCA" style="float: right;" target="_blank"><span><p class="source-link">Github</p></span><i class="icon-github"></i></a>
+										</div>
+										<p class="font-big margin-5-0-5-0 font-bold">MCA Department Website</p>
+										<small class="small-small">
+											<ul>
+												<li>A website focused portal for student registration, attendance, results, exams, admissions, and organizing their problems</li>
+											</ul>
+											<p class="font-normal">Used HTML, CSS, JavaScript, Bootstrap, JQuery, PHP and MySQL</p>
+										</small>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature desk-vis">
+									<div class="port-icon">
+										<i class="icon-lightbulb-o"></i>
+									</div>
+									<div class="port-text">
+										<div style="overflow: hidden;">
+											<p class="font-minute margin-less-bot" style="float: left;">2019</p>
+											<a href="https://github.com/pawanesh97/OPAS" style="float: right;" target="_blank"><span><p class="source-link">Github</p></span><i class="icon-github"></i></a>
+										</div>
+										<p class="font-big margin-5-0-5-0 font-bold">Online Patient Appointment System</p>
+										<small class="small-small">
+											<ul>
+												<li>An end to end Database focused portal for patient registration, organizing information and fixing appointment with healthcare professionals</li>
+											</ul>
+											<p class="font-normal">Tools and Technology: HTML, CSS, Bootstrap, JavaScript, JQuery, PHP, Rest API, PHP MySQL and Cowin-Setu API</p>
+										</small>
+									</div>
+									<hr class="slick-hr"/>
+								</div>
+
+								<div class="port-feature hideme">
+									<div class="port-icon">
+										<i class="icon-lightbulb-o"></i>
+									</div>
+									<div class="port-text">
+										<div style="overflow: hidden;">
+											<p class="font-minute margin-less-bot" style="float: left;">2018</p>
+											<a href="#" style="float: right;" target="_blank"><span><p class="source-link">Github</p></span><i class="icon-github"></i></a>
+										</div>
+
+										<p class="font-big margin-5-0-5-0 font-bold">Java Training</p>
+										<small class="small-small">
+											<ul>
+												<li>Summer Training</li>
+											</ul>
+											<p class="font-normal">Tools and Technology: Java</p>
+										</small>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tab 6: Skills -->
+				<div class="port-tab-content" data-content="6">
+					<div class="port-content-inner">
+						<div class="row">
+							<div class="col-md-12">
+								<p class="font-big font-bold">Programming</p>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="60">
+										<span>
+											<strong class="pie-skill">C++</strong><p class="pie-perc">60</p>
+											<img src="images/icon/cp.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="60">
+										<span>
+											<strong class="pie-skill">Python</strong><p class="pie-perc">60</p>
+											<img src="images/icon/py.webp" alt="" height="70" width="50" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="75">
+										<span>
+											<strong class="pie-skill">Java</strong><p class="pie-perc">75</p>
+											<img src="images/icon/jv.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="60">
+										<span>
+											<strong class="pie-skill">C</strong><p class="pie-perc">60</p>
+											<img src="images/icon/c.webp" alt="" height="80" width="80" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="75">
+										<span>
+											<strong class="pie-skill">Javascript</strong><p class="pie-perc">75</p>
+											<img src="images/icon/js.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="95">
+										<span>
+											<strong class="pie-skill">PHP</strong><p class="pie-perc">95</p>
+											<img src="images/icon/php.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Web Development -->
+						<div class="row">
+							<div class="col-md-12">
+								<p class="font-big font-bold">Web Development</p>
+
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="90">
+										<span>
+											<strong class="pie-skill">HTML</strong><p class="pie-perc">90</p>
+											<img src="images/icon/ht.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="75">
+										<span>
+											<strong class="pie-skill">JQuery</strong><p class="pie-perc">75</p>
+											<img src="images/icon/jq.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="80">
+										<span>
+											<strong class="pie-skill">CSS</strong><p class="pie-perc">80</p>
+											<img src="images/icon/cs.webp" alt="" height="65" width="65" class="pie-img">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Misc -->
+						<div class="row">
+							<div class="col-md-12">
+								<p class="font-big font-bold">Miscellaneous:</p>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="75">
+										<span>
+											<strong class="pie-skill">MYSQL</strong><p class="pie-perc">75</p>
+											<img src="images/icon/my.webp" alt="" height="65" width="65" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="80">
+										<span>
+											<strong class="pie-skill">Git</strong><p class="pie-perc">80</p>
+											<img src="images/icon/gt.webp" alt="" height="70" width="70" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-3 col-xs-6 text-center">
+									<div class="chart" data-percent="80">
+										<span>
+											<strong class="pie-skill">MS Excel</strong><p class="pie-perc">80</p>
+											<img src="images/icon/ex.webp" alt="" height="60" width="60" class="pie-img">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Other tools -->
+						<div class="row pad-top-30">
+							<div class="col-md-12">
+								<p class="font-big font-bold">Other Familiar Tools (Limited Exposure)</p>
+
+								<div class="col-md-2 col-sm-2 col-xs-4 text-center">
+									<div class="chart-small" data-percent="100">
+										<span>
+											<strong class="pie-skill">XAMP</strong>
+											<img src="images/icon/ds.webp" alt="" height="50" width="50" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-4 text-center">
+									<div class="chart-small" data-percent="100">
+										<span>
+											<strong class="pie-skill">Wamp</strong>
+											<img src="images/icon/wamp.jpg" alt="" height="50" width="50" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-4 text-center">
+									<div class="chart-small" data-percent="100">
+										<span>
+											<strong class="pie-skill">Android Studio</strong>
+											<img src="images/icon/and1.png" alt="" height="50" width="50" class="pie-img">
+										</span>
+									</div>
+								</div>
+								<div class="col-md-2 col-sm-2 col-xs-4 text-center">
+									<div class="chart-small" data-percent="100">
+										<span>
+											<strong class="pie-skill">MS Office</strong>
+											<img src="images/icon/of.webp" alt="" height="50" width="50" class="pie-img">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div> <!-- port-content-inner -->
+				</div> <!-- port-tab-content data-content=6 -->
+
+			</div> <!-- port-tab-wrap -->
+		</div> <!-- port-main -->
+	</div> <!-- port-wrapper -->
+
+	<!-- Footer -->
+	<footer id="port-footer">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<small>
+					<p class="margin-less-bot">Reach me @ pawanesh.vishwakarma@yahoo.com</p>
+				</small>
+				<ul class="port-social">
+					<li><a href="https://www.instagram.com/pawanesh_in/" target="_blank"><i class="icon-instagram"></i></a></li>
+					<li><a href="https://linkedin.com/in/pawanesh-in/" target="_blank"><i class="icon-linkedin"></i></a></li>
+					<li><a href="https://github.com/pawanesh97" target="_blank"><i class="icon-github"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.min.js"
+	  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min.js"></script>
+	<script src="js/global.js"></script>
 
 </body>
 </html>
