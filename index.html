@@ -1,117 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawanesh Portfolio</title>
-    <meta name="description" content="Pawanesh - Software Developer - Portfolio" />
-    <meta name="keywords" content="Pawanesh, Portfolio, Software Developer, Pawanesh" />
-    <meta name="author" content="Pawanesh" />
-    <meta property="og:title" content="Pawanesh - Portfolio" />
-    <meta property="og:image" content="/images/ss2.png" />
-    <meta property="og:site_name" content="Pawanesh - Portfolio" />
-    <meta property="og:description" content="Pawanesh - Software Developer - Portfolio" />
-    <meta name="twitter:title" content="Pawanesh Twitter" />
-    <link rel="icon" href="images/ico.png">
-    <link rel="shortcut icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Tabs</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style1.css">
+    .portfolio {
+        max-width: 900px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Tabs container */
+    .tabs {
+        display: flex;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+    }
+
+    .tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        background: #f0f0f0;
+        transition: 0.3s;
+    }
+
+    .tab.active {
+        background: #007bff;
+        color: white;
+    }
+
+    .tab:hover {
+        background: #e0e0e0;
+    }
+
+    /* Tab content */
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* Portfolio grid */
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .portfolio-item {
+        background: #fafafa;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .portfolio-item h4 {
+        margin: 10px;
+    }
+
+    .portfolio-item p {
+        margin: 0 10px 10px;
+        font-size: 0.9em;
+        color: #555;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
-<body style="background-image: url('images/bg.png');">
+<body>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#training">Training</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="portfolio">
+    <h2>My Portfolio</h2>
 
-<section id="profile">
-    <h1>Pawanesh Vishwakarma</h1>
-    <p>MOTILAL NEHRU NATIONAL INSTITUTE OF TECHNOLOGY ALLAHABAD</p>
-    <p>I am growing as an Assistant Professor and specializing in Computer Science and Application.</p>
-    <h2>Recent Qualifications:</h2>
-    <ul>
-        <li>Doctor of Philosophy - Computer Science and Engineering (July 2023 - Present)</li>
-        <li>Master of Computer Application (MCA) (July 2019 - December 2021)</li>
-        <li>Bachelor of Computer Application (BCA) (July 2016 - July 2019)</li>
-    </ul>
-</section>
-
-<section id="experience">
-    <h2>Experience</h2>
-    <p>Fresher</p>
-    <p>Looking for Lecture Assistantship in Computer Science and Application</p>
-</section>
-
-<section id="education">
-    <h2>Education</h2>
-    <!-- MCA -->
-    <div>
-        <h3>Master of Computer Application (MCA)</h3>
-        <p>Major: Computer Application</p>
-        <p>2019-2021</p>
-        <p>IET, Dr Rammanohar Lohia Avadh University Ayodhya</p>
-        <p>78%</p>
-        <h4>Coursework:</h4>
-        <ul>
-            <li>Advanced Algorithms</li>
-            <li>Python</li>
-            <li>Machine Learning</li>
-            <li>Natural Language Processing</li>
-            <li>Big Data</li>
-            <li>Software Engineering</li>
-            <li>Operating Systems</li>
-            <li>Database Management Systems</li>
-            <li>Android Application</li>
-            <li>PHP</li>
-        </ul>
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" data-tab="all">All</div>
+        <div class="tab" data-tab="web">Web Design</div>
+        <div class="tab" data-tab="app">App Development</div>
+        <div class="tab" data-tab="graphics">Graphics</div>
     </div>
-    <!-- BCA -->
-    <div>
-        <h3>Bachelor of Computer Application (BCA)</h3>
-        <p>2016-2019</p>
-        <p>Dr Rammanohar Lohia Avadh University Ayodhya</p>
-        <p>73.44%</p>
-        <h4>Coursework:</h4>
-        <ul>
-            <li>Computer Fundamental</li>
-            <li>DSA</li>
-            <li>C</li>
-            <li>C++</li>
-            <li>Object Oriented Programming System</li>
-            <li>Software Engineering</li>
-            <li>Operating Systems</li>
-            <li>Database Management Systems</li>
-            <li>Computer Graphics</li>
-            <li>Optimization Technique</li>
-        </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content active" id="all">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>Project 1</h4>
+                <p>Web Design</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>Project 2</h4>
+                <p>App Development</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>Project 3</h4>
+                <p>Graphics</p>
+            </div>
+        </div>
     </div>
-</section>
 
-<footer>
-    <p>Reach me @ <a href="mailto:pawanesh.vishwakarma@yahoo.com">pawanesh.vishwakarma@yahoo.com</a></p>
-    <ul>
-        <li><a href="https://www.instagram.com/pawanesh_in/" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/in/pawanesh-in/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/pawanesh97" target="_blank">GitHub</a></li>
-    </ul>
-</footer>
+    <div class="tab-content" id="web">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>Web Project A</h4>
+                <p>Landing Page Design</p>
+            </div>
+        </div>
+    </div>
 
-<!-- JS -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<script src="js/global.js"></script>
+    <div class="tab-content" id="app">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>App Project A</h4>
+                <p>Mobile App UI</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content" id="graphics">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://via.placeholder.com/400x200" alt="Project">
+                <h4>Graphics Project A</h4>
+                <p>Poster Design</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const tabs = document.querySelectorAll(".tab");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            tabContents.forEach(content => {
+                content.classList.remove("active");
+            });
+
+            document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+    });
+</script>
+
 </body>
 </html>
