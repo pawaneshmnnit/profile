@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawanesh Kumar Vishwakarma | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for the scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #555;
+			color:white;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            left: -6px;
+            top: 4px;
+            background-color: #3b82f6; /* blue-500 */
+            border: 2px solid #ffffff;
+        }
+		.dark #experience{
+		color: white;
+		}
+        .dark .timeline-item::before {
+            border-color: #1f2937; /* dark:bg-gray-800 */
+			
+        }
+        /* Active state for navigation tabs */
+        .nav-button.active {
+            background-color: #3b82f6; /* blue-500 */
+            color: #ffffff;
+        }
+        .dark .nav-button.active {
+            background-color: #db3218; /* dark:blue-400 */
+        }
+        /* Language Dropdown */
+        .lang-menu {
+            position: relative;
+        }
+        .lang-menu-content {
+            display: none;
+            position: relative;
+            right: 0;
+            top: 100%;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 50;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .dark .lang-menu-content {
+            background-color: #db3218;
+        }
+        .lang-menu:hover .lang-menu-content {
+            display: block;
+        }
+        .lang-menu-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dark .lang-menu-content a {
+            color: white;
+        }
+		.dark body {
+            font-family: 'Inter', sans-serif;
+			color:white;
+			background-color:black;
+        }
+		.dark .text-4xl{
+		color:white;
+		}
+		.dark .text-white{
+		color:white;
+		}
+		#footer{
+		background-color:#374151;
+		}
+		.dark #footer{
+		background-color:#db3218;
+		}
+        .lang-menu-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dark .lang-menu-content a:hover {
+            background-color: #374151;
+        }
+		.dark .bg-gray-100{
+		background-color:whitesmoke;
+		color: black;
+		}
+		
+		
+		
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-900 transition-colors duration-300">
+
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
+        
+        <!-- Header -->
+        <header class="relative mb-8">
+            <div class="absolute top-0 right-0 flex items-center space-x-4 z-20">
+                <div class="lang-menu">
+                    <button class="border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <span data-translate-key="lang_button">Languages ▾</span>
+                    </button>
+                    <div class="lang-menu-content text-left">
+                        <a href="#" onclick="switchLanguage('en')">English</a>
+                        <a href="#" onclick="switchLanguage('hi')">हिंदी (Hindi)</a>
+                        <a href="#" onclick="switchLanguage('de')">Deutsch (German)</a>
+                        <a href="#" onclick="switchLanguage('fr')">Français (French)</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <span class="dark:hidden" data-translate-key="theme_dark">Dark</span>
+                    <span class="hidden dark:inline" data-translate-key="theme_light">Light</span>
+                </button>
+            </div>
+            
+            <div class="lg:hidden absolute top-0 left-0">
+                 <button id="menu-toggle" class="p-2 rounded-md text-gray-700 dark:text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                 </button>
+            </div>
+			<br/>
+			<br/>
+            <div class="text-center pt-12 lg:pt-0">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white" data-translate-key="name">Pawanesh Kumar Vishwakarma</h1>
+                <div class="mt-4 flex justify-center items-center space-x-2 text-gray-600 dark:text-gray-400">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span>pawanesh.2023rcs04@mnnit.ac.in</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav id="main-nav" class="hidden lg:flex flex-col lg:flex-row lg:flex-wrap lg:justify-center items-center space-y-2 lg:space-y-0 gap-2 sm:gap-4 mb-12">
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition active" data-target="about" data-translate-key="nav_about">About Me</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="experience" data-translate-key="nav_experience">Experience</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="education" data-translate-key="nav_education">Education</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="skills" data-translate-key="nav_skills">Skills</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="awards" data-translate-key="nav_awards">Awards</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="publications" data-translate-key="nav_publications">Publications</button>
+        </nav>
+
+        <!-- Content Area -->
+        <main>
+            <!-- Photo Placeholder -->
+            <div class="flex justify-center mb-12">
+                <div class="w-48 h-48 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <img src="profile.jpg"/>
+                </div>
+            </div>
+
+            <!-- Dynamic Content Sections -->
+            <div id="content-area">
+                <section id="about" class="content-section">
+                    <p class="text-lg text-center leading-relaxed max-w-3xl mx-auto" data-translate-key="about_full">
+                        I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.
+                    </p>
+                </section>
+
+                <section id="experience" class="content-section hidden">
+                    <div class="relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 max-w-2xl mx-auto">
+                        <div class="timeline-item">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</p>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white" data-translate-key="experience_title">Research Scholar</h3>
+                            <p class="text-md text-gray-600 dark:text-gray-300" data-translate-key="experience_org">Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="education" class="content-section hidden">
+                     <div class="relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 max-w-2xl mx-auto">
+                        <div class="mb-10 timeline-item">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</p>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Ph.D. in Computer Science & Engineering</h3>
+                            <p class="text-md text-gray-600 dark:text-gray-300">Motilal Nehru National Institute of Technology Allahabad, Prayagraj</p>
+                        </div>
+                        <!---<div class="mb-10 timeline-item">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2023 - 2025</p>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Executive M.Tech. in AI & DS</h3>
+                            <p class="text-md text-gray-600 dark:text-gray-300">Indian Institute of Technology Patna</p>
+                        </div> --->
+                        <div class="mb-10 timeline-item">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2019 - 2021</p>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">MCA, Computer Application</h3>
+                            <p class="text-md text-gray-600 dark:text-gray-300">Institute of Engineering & Technology, Dr. RML University Ayodhya</p>
+							
+                        </div>
+                         <div class="timeline-item">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2016 - 2019</p>
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">BCA, Computer Application</h3>
+                            <p class="text-md text-gray-600 dark:text-gray-300">Dr. RML University Ayodhya</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="content-section hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_coding">Coding Languages</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">C/C++</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Python</span>
+                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">PHP</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">SQL</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">LaTeX</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_web">Web Development</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">HTML</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">CSS</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">JavaScript</span>
+                                 <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Apache</span>
+                                  <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">XAMPP</span>
+                            </div>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_db">Databases</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">MySQL</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">SQLite</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_misc">AI/ML/DL</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Deep Learning</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Computer Vision</span>
+                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Image Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="awards" class="content-section hidden">
+                    <div class="space-y-4 max-w-3xl mx-auto">
+                        <ul class="list-disc list-inside space-y-3 text-lg">
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">Silver+Elite Award (2024):</span> The Joy of Computing using Python by NPTEL.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">UGC NET (June 2025, Dec 2024, June 2024, Dec 2022):</span> For Assistant Professor, awarded by UGC.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">Conference Award (2025):</span> 6th International Conference on Recent Advances in Information Technology (RAIT) 2025.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">ATAL Academy Certification (2024):</span> HPC for Medical Image Processing and Computer Vision.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">Deep Learning Certifications:</span> From NPTEL and IIIT Bhubanswar.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li><span class="font-semibold">Merit Award (2014):</span> High School, RBIC Siddharth Nagar.</li>
+						</div>
+						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <li>And various other certifications in Python, Android App Development, and Java.</li>
+						</div>	
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="publications" class="content-section hidden">
+                    <div class="space-y-6 max-w-3xl mx-auto">
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-translate-key="pub_journal">Journal Article</h3>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">
+                                P. K. Vishwakarma and B. K. Bhardwaj, "Challenges values for artificial intelligence research," Mukt Shabd Journal, vol. X, 2021.
+                            </p>
+                        </div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-translate-key="pub_conference">Conference Proceeding</h3>
+                            <p class="mt-2 text-gray-700 dark:text-gray-300">
+                                P. K. Vishwakarma, D. K. Singh, and A. Sahu, "Action recognition from egocentric videos using rgb + depth modalities," in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white text-center p-4 mt-16" id="footer">
+        <p>&copy; <span id="current-year"></span> <span data-translate-key="footer_text">Pawanesh Kumar Vishwakarma. All Rights Reserved.</span></p>
+    </footer>
+
+    <script>
+        // --- TRANSLATION DATA ---
+        const translations = {
+            en: {
+                name: "Pawanesh K. Vishwakarma",
+                lang_button: "Languages ▾",
+                theme_dark: "Dark/Light",
+                theme_light: "Light",
+                nav_about: "About Me",
+                nav_experience: "Experience",
+                nav_education: "Education",
+                nav_skills: "Skills",
+                nav_awards: "Certifications/Awards",
+                nav_publications: "Publications",
+                photo_placeholder: "PHOTO",
+                about_full: "I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.",
+                experience_title: "Research Scholar",
+                experience_org: "Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India.",
+                skills_coding: "Coding Languages",
+                skills_web: "Web Development",
+                skills_db: "Databases",
+                skills_misc: "AI/ML/DL",
+                pub_journal: "Journal Article",
+                pub_conference: "Conference Proceeding",
+                footer_text: "Pawanesh Kumar Vishwakarma. All Rights Reserved."
+            },
+            hi: {
+                name: "पवनेश कु. विश्वकर्मा",
+                lang_button: "भाषाएँ ▾",
+                theme_dark: "डार्क",
+                theme_light: "लाइट",
+                nav_about: "मेरे बारे में",
+                nav_experience: "अनुभव",
+                nav_education: "शिक्षा",
+                nav_skills: "कौशल",
+                nav_awards: "पुरस्कार",
+                nav_publications: "प्रकाशन",
+                photo_placeholder: "फोटो",
+                about_full: "मैं मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद में कंप्यूटर विजन में विशेषज्ञता वाला एक समर्पित और उत्साही शोध अध्येता हूं। मेरा शोध अहंकार-केंद्रित वीडियो विश्लेषण के लिए मल्टीमॉडल दृष्टिकोण पर केंद्रित है। एक मजबूत अकादमिक पृष्ठभूमि और व्यावहारिक अनुभव के साथ, मैं जटिल समस्याओं को हल करने और कृत्रिम बुद्धिमत्ता की उन्नति में योगदान करने की चुनौती से प्रेरित हूं।",
+                experience_title: "शोध अध्येता",
+                experience_org: "सीएसई विभाग, मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद, प्रयागराज-भारत।",
+                skills_coding: "कोडिंग भाषाएं",
+                skills_web: "वेब डेवलपमेंट",
+                skills_db: "डेटाबेस",
+                skills_misc: "विविध",
+                pub_journal: "जर्नल आलेख",
+                pub_conference: "सम्मेलन की कार्यवाही",
+                footer_text: "पवनेश कुमार विश्वकर्मा। सर्वाधिकार सुरक्षित।"
+            },
+            de: { // German - Placeholder
+                name: "Pawanesh K. Vishwakarma",
+                lang_button: "Sprachen ▾",
+                theme_dark: "Dunkel",
+                theme_light: "Hell",
+                nav_about: "Über mich",
+                nav_experience: "Erfahrung",
+                nav_education: "Bildung",
+                nav_skills: "Fähigkeiten",
+                nav_awards: "Auszeichnungen",
+                nav_publications: "Veröffentlichungen",
+                photo_placeholder: "FOTO",
+                about_full: "Ich bin ein engagierter und leidenschaftlicher Forschungsstipendiat am Motilal Nehru National Institute of Technology Allahabad und spezialisiere mich auf Computer Vision. Meine Forschung konzentriert sich auf multimodale Ansätze für die egozentrische Videoanalyse. Mit einem starken akademischen Hintergrund und praktischer Erfahrung treibt mich die Herausforderung an, komplexe Probleme zu lösen und zur Weiterentwicklung der künstlichen Intelligenz beizutragen.",
+                experience_title: "Forschungsstipendiat",
+                experience_org: "Abteilung für CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Indien.",
+                skills_coding: "Programmiersprachen",
+                skills_web: "Web-Entwicklung",
+                skills_db: "Datenbanken",
+                skills_misc: "Sonstiges",
+                pub_journal: "Zeitschriftenartikel",
+                pub_conference: "Konferenzbeitrag",
+                footer_text: "Pawanesh Kumar Vishwakarma. Alle Rechte vorbehalten."
+            },
+            fr: { // French - Placeholder
+                name: "Pawanesh K. Vishwakarma",
+                lang_button: "Langues ▾",
+                theme_dark: "Sombre",
+                theme_light: "Clair",
+                nav_about: "À propos de moi",
+                nav_experience: "Expérience",
+                nav_education: "Éducation",
+                nav_skills: "Compétences",
+                nav_awards: "Prix",
+                nav_publications: "Publications",
+                photo_placeholder: "PHOTO",
+                about_full: "Je suis un chercheur dévoué et passionné au Motilal Nehru National Institute of Technology Allahabad, spécialisé en vision par ordinateur. Ma recherche se concentre sur les approches multimodales pour l'analyse vidéo égocentrique. Avec une solide formation académique et une expérience pratique, je suis motivé par le défi de résoudre des problèmes complexes et de contribuer à l'avancement de l'intelligence artificielle.",
+                experience_title: "Chercheur",
+                experience_org: "Département de CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Inde.",
+                skills_coding: "Langages de programmation",
+                skills_web: "Développement web",
+                skills_db: "Bases de données",
+                skills_misc: "Divers",
+                pub_journal: "Article de journal",
+                pub_conference: "Actes de conférence",
+                footer_text: "Pawanesh Kumar Vishwakarma. Tous droits réservés."
+            }
+        };
+
+        // --- CORE SCRIPT LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Theme Toggler
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const applyTheme = (theme) => {
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            };
+            const savedTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(savedTheme);
+            themeToggleBtn.addEventListener('click', () => {
+                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+                localStorage.setItem('color-theme', newTheme);
+                applyTheme(newTheme);
+            });
+
+            // 2. Set Current Year in Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // 3. Language Switcher
+            const savedLang = localStorage.getItem('language') || 'en';
+            switchLanguage(savedLang);
+
+            // 4. Tabbed and Hamburger Navigation
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            const navButtons = document.querySelectorAll('.nav-button');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // Hamburger menu toggle
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('hidden');
+            });
+
+            // Tab switching logic
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+
+                    // Update button active states
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Show/hide content sections
+                    contentSections.forEach(section => {
+                        section.classList.toggle('hidden', section.id !== targetId);
+                    });
+
+                    // Hide hamburger menu after selection on mobile
+                    if (window.innerWidth < 1024) { // Tailwind's lg breakpoint
+                        mainNav.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        function switchLanguage(lang) {
+            if (!translations[lang]) return;
+            document.querySelectorAll('[data-translate-key]').forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            localStorage.setItem('language', lang);
+            if(event) event.preventDefault();
+        }
+    </script>
+
+</body>
+</html>
