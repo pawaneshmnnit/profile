@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Scholars | CSE Department | MNNIT Allahabad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple style for the active tab */
+        .tab-active {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://mnnit.ac.in/institutelogo/MNNIT%20(logo)png.png" alt="MNNIT Allahabad Logo" class="h-16 w-16 object-contain">
+                <div>
+                    <h1 class="text-xl md:text-3xl font-bold text-gray-800">Computer Science & Engineering Department</h1>
+                    <p class="text-sm md:text-md text-gray-600">Motilal Nehru National Institute of Technology Allahabad, Prayagraj</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold text-gray-900">Our Research Scholars</h2>
+            <p class="mt-4 text-lg text-gray-600">Meet the dedicated and brilliant minds pursuing doctoral research in our department.</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="mb-8 flex flex-wrap justify-center gap-2">
+            <button data-tab="aug2025" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2025</button>
+            <button data-tab="aug2024" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2024</button>
+            <button data-tab="dec2023" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">December 2023</button>
+            <button data-tab="aug2023" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2023</button>
+            <button data-tab="aug2022" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2022</button>
+            <button data-tab="dec2021" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">December 2021</button>
+            <button data-tab="aug2021" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2021</button>
+            <button data-tab="aug2020" class="tab-btn px-4 py-2 text-sm font-semibold rounded-md shadow-sm transition-colors duration-200">August 2020</button>
+        </div>
+
+
+        <!-- Scholars Grids Container -->
+        <div>
+            <!-- August 2025 Batch -->
+            <div id="aug2025" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Add scholar cards for August 2025 here -->
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- August 2024 Batch -->
+            <div id="aug2024" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Add scholar cards for August 2024 here -->
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- December 2023 Batch -->
+            <div id="dec2023" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Scholar Card 1 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=AK" alt="Placeholder">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Ashish Kumar</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS51</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Vishal Srivastava</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Research Area</p>
+                                <p class="mt-3 text-gray-600 text-sm">Brief description of research work.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+					
+					
+					<!-- Scholar Card 2 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://www.ngndai.mnnit.ac.in/assets/Vikashchandra%20Sharma-BjMFh-3L.jpg" alt="Placeholder">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Vikash Chandra Sharma</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold">Reg. No: 2023RCS52</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Saugata Roy</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Research Area</p>
+                                <p class="mt-3 text-gray-600 text-sm">Brief description of research work.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+					
+					<!-- Scholar Card 3 -->
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=GM" alt="Placeholder">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Girjesh Mishra</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS53</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Kailash W. Kalare</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Research Area</p>
+                                <p class="mt-3 text-gray-600 text-sm">Brief description of research work.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- August 2023 Batch -->
+            <div id="aug2023" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Scholar Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=AK" alt="Photo of Abhishek Kant">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Abhishek Kant</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold">Reg. No: 2023RCS01</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisors:</strong> Dr. Manoj Wairiya and Dr. Shashank Srivastava</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Machine Learning, NLP</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Scholar Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=F8o_RSYAAAAJ&citpid=3" alt="Photo of Jyoti Maurya">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Jyoti Maurya</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS02</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Deepak Gupta</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Machine Learning, SVM, Twin-SVM</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Scholar Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://media.licdn.com/dms/image/v2/D5603AQFdhf21Zqymgw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689518226306?e=1760572800&v=beta&t=eJzvD1nmmTPKfhU_Gk0C7YvQS2xSoIHaG-eQh3I8he0" alt="Photo of Manisha">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Manisha</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS04</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. J. Sathish Kumar</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Cryptography, Blockchain</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Scholar Card 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://pawaneshmnnit.github.io/profile/pic2.jpg" alt="Photo of Pawanesh Kumar Vishwakarma">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Pawanesh Kumar Vishwakarma</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS04</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong>Dr. Abhimanyu Sahu</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Computer Vision, Deep Learning.
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="https://pawaneshmnnit.github.io/profile/index.html" target="_blank" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="https://www.linkedin.com/in/pawanesh-in" target="_blank"  class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Scholar Card 5 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://www.ngndai.mnnit.ac.in/assets/AnjaniKumar-eH5p6Xgl.jpg" alt="Photo of Anjani Kumar">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Anjani Kumar</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS05</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Ashish Kumar Maurya</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Cloud Computing</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Scholar Card 6 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=PSD" alt="Photo of Prem Shankar Dwivedi">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Prem Shankar Dwivedi</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold">Reg. No: 2023RCS06</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Amit Biswas</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Deep Learning</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Scholar Card 7 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=ST" alt="Photo of Shivangi Tripathi">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Shivangi Tripathi</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS07</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Shashwati Banerjea </p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Deep Learning</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Scholar Card 8 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://www.ngndai.mnnit.ac.in/assets/smritisingh-DnkiLhGv.png" alt="Photo of Smriti Singh">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Smriti Singh</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS08</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Prof. A. K. Singh</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> NLP</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Scholar Card 9 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://www.ngndai.mnnit.ac.in/assets/VijayKumar-D7ae2Dck.jpg" alt="Photo of Vijay Kumar">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Vijay Kumar</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS09</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Abhinav Kumar</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Deep Learning</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    <!-- Scholar Card 11 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=MK" alt="Photo of Manoj Kumar">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Manoj Kumar</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold">Reg. No: 2023RCS11</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Dr. Indu Dohare </p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Deep Learning</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                    <!-- Scholar Card 12 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <div class="p-6">
+                            <div class="flex items-center space-x-4">
+                                <img class="w-20 h-20 rounded-full object-cover" src="https://placehold.co/100x100/EFEFEF/333333?text=DCY" alt="Photo of Deep Chand Yadav">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900"> Deep Chand Yadav</h3>
+                                    <p class="text-sm text-indigo-600 font-semibold"> Reg. No: 2023RCS12</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <p class="text-sm"><strong>Supervisor:</strong> Prof. R. S. Yadav</p>
+                                <p class="text-sm mt-1"><strong>Research Area:</strong> Deep Learning</p>
+                                <p class="mt-3 text-gray-600 text-sm"></p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-3 flex justify-end space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-blue-600"><i class="fas fa-link"></i> Website</a>
+                            <a href="#" class="text-gray-500 hover:text-blue-800"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- August 2022 Batch -->
+             <div id="aug2022" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- December 2021 Batch -->
+            <div id="dec2021" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- August 2021 Batch -->
+            <div id="aug2021" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- August 2020 Batch -->
+            <div id="aug2020" class="tab-content hidden">
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="text-center col-span-full p-8 bg-white rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-700">Details for this batch will be updated soon.</h3>
+                    </div>
+                 </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-12 border-t">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-600">
+            <p>&copy; 2025 Computer Science & Engineering Department, MNNIT Allahabad. All Rights Reserved.</p>
+            <p class="text-sm mt-2">For official information, please visit the <a href="https://mnnit.ac.in/index.php/department/engineering/csed" target="_blank" class="text-indigo-600 hover:underline">official department website</a>.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript for tab functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // Function to switch tabs
+            function switchTab(tabId) {
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                tabs.forEach(tab => {
+                    tab.classList.remove('tab-active', 'bg-red-600', 'text-white');
+                    tab.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                });
+
+                const activeContent = document.getElementById(tabId);
+                const activeTab = document.querySelector(`[data-tab="${tabId}"]`);
+
+                if (activeContent && activeTab) {
+                    activeContent.classList.remove('hidden');
+                    activeTab.classList.add('tab-active', 'bg-red-600', 'text-white');
+                    activeTab.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+                }
+            }
+
+            // Add click event listeners to tab buttons
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    switchTab(tab.dataset.tab);
+                });
+            });
+
+            // Set the initial active tab to August 2023
+            switchTab('aug2023');
+        });
+    </script>
+
+</body>
+</html>
+
+
