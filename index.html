@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 <style>
         /* Custom Styles */
         body {
@@ -119,6 +120,29 @@
 		.footer-icon{
 		display:inline-block;
 		}
+
+    /* ... existing custom styles ... */
+
+    /* New: For smooth dropdown transition and content overflow handling */
+    .collapse-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    }
+    .collapse-content.open {
+        max-height: 1000px; /* Transition height */
+        padding-top: 1.5rem;
+    }
+    
+    /* NEW: Style for scrollable content inside the opened card */
+    .collapse-scroll-wrapper {
+        max-height: 600px; /* Define the max visible height for content */
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds 600px */
+        padding-right: 1rem; /* Added padding to prevent content hugging the scrollbar */
+    }
+
+    /* ... rest of your custom styles ... */
+
 		
     </style>
 </head>
@@ -126,7 +150,6 @@
 
     <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
         
-        <!-- Header -->
         <header class="relative mb-8">
             <div class="absolute top-0 right-0 flex items-center space-x-4 z-20">
                 <div class="lang-menu">
@@ -166,34 +189,29 @@
             </div>
         </header>
 
-        <!-- Navigation Tabs -->
         <nav id="main-nav" class="hidden lg:flex flex-col lg:flex-row lg:flex-wrap lg:justify-center items-center space-y-2 lg:space-y-0 gap-2 sm:gap-4 mb-12">
             <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition active" data-target="about" data-translate-key="nav_about">About Me</button>
             <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="experience" data-translate-key="nav_experience">Experience</button>
             <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="education" data-translate-key="nav_education">Education</button>
             <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="skills" data-translate-key="nav_skills">Skills</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="awards" data-translate-key="nav_awards">Awards</button>
+            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="awards" data-translate-key="nav_awards">Certifications/Awards</button>
             <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="publications" data-translate-key="nav_publications">Publications</button>
         </nav>
 
-        <!-- Content Area -->
         <main>
-           <!-- Photo Placeholder -->
-            <div class="flex justify-center mb-12">
+           <div class="flex justify-center mb-12">
                 <div class="w-40 h-45 bg-gray-600 rounded-lg flex items-center justify-center">
                     <img src="pic2.jpg"/>
                 </div>
             </div>
 
-            <!-- Dynamic Content Sections -->
             <div id="content-area">
                 <section id="about" class="content-section">
                     <p class="text-lg text-center leading-relaxed max-w-3xl mx-auto" data-translate-key="about_full">
                         I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.
                     </p>
 					<br/>	
-				<!-- New Blinking Button Link -->
-					<center>
+				<center>
 	            <a href="csed_phd_scholar.html" target="_blank" class="relative inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold text-white bg-red-600 hover:bg-gray-700 hover:scale-105 transition-transform duration-200 shadow-md">
 	                <span>PhD Scholars | CSE Department</span>
 	                <i class="fas fa-arrow-right ml-2"></i>
@@ -201,9 +219,7 @@
 	                <div class="bg-green-500 rounded-full absolute -top-1 -right-1 w-4 h-4 border-2 border-white"></div>
 	            </a>
 						</center>
-            <!-- End of New Button -->
-					
-                </section>
+            </section>
 
                 <section id="experience" class="content-section hidden">
                     <div class="relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 max-w-2xl mx-auto">
@@ -225,11 +241,6 @@
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Ph.D. in Computer Science & Engineering</h3>
                             <p class="text-md text-gray-600 dark:text-gray-300">Motilal Nehru National Institute of Technology Allahabad, Prayagraj</p>
                         </div>
-                        <!---<div class="mb-10 timeline-item">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">2023 - 2025</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Executive M.Tech. in AI & DS</h3>
-                            <p class="text-md text-gray-600 dark:text-gray-300">Indian Institute of Technology Patna</p>
-                        </div> --->
                         <div class="mb-10 timeline-item">
                             <p class="text-sm text-gray-500 dark:text-gray-400">Post-Graduation</p>
                             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">MCA, Computer Application</h3>
@@ -285,88 +296,277 @@
                 </section>
                 
                 <section id="awards" class="content-section hidden">
-                    <div class="space-y-4 max-w-3xl mx-auto">
-                        <ul class="list-disc list-inside space-y-3 text-lg">
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Silver+Elite Award (Nov 2024):</span> The Joy of Computing using Python by NPTEL.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">UGC NET (June 2025, Dec 2024, June 2024, Dec 2022):</span> For Assistant Professor, awarded by UGC.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Conference Certificate (March 2025):</span> 6th International Conference on Recent Advances in Information Technology (RAIT) 2025.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">ATAL Academy Certification (Dec 2024):</span> HPC for Medical Image Processing and Computer Vision.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Deep Learning Certification (May 2024):</span> From NPTEL and IIIT Bhubanswar.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">International Workshop on Deep Learning and Artificial Intelligence (DLAI8) (Aug 2024):</span> From IIIT Bhubanswar.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Recent Advances in Computer Vision: Application and Implementation(Dec 2024):</span> From Nationa Institute of Technology Rourkela.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Self-Sponsered Shot-Term Online Course on "Towards AI Enabled Computer Vision (Jul 2024):</span> ABV-Indian Institute of Information Technology and Management Bhopal.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li><span class="font-semibold">Merit Award (2014):</span> High School, RBIC Siddharth Nagar.</li>
-						</div>
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <li>And various other certifications in Python, Android App Development, and Java.</li>
-						</div>	
-                        </ul>
-                    </div>
-                </section>
+				<div class="space-y-6 max-w-3xl mx-auto">
 
-                                <section id="publications" class="content-section hidden">
-                    <div class="space-y-6 max-w-3xl mx-auto">
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-translate-key="pub_journal">Journal Article</h3>
-                            <p class="mt-2 text-gray-700 dark:text-gray-300">
-                                P. K. Vishwakarma and B. K. Bhardwaj, "Challenges values for artificial intelligence research", Mukt Shabd Journal, vol. X, 2021.
-                            </p>
-                        </div>
-                        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-translate-key="pub_conference">Conference Proceeding</h3>
-                            <p class="mt-2 text-gray-700 dark:text-gray-300">
-                                P. K. Vishwakarma, D. K. Singh, and A. Sahu, "Action recognition from egocentric videos using rgb + depth modalities", in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6.
-                            </p>
-                        </div>
+					<div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
+						<button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('awards-list')">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="awards_heading">Awards & Qualifications</h3>
+							<svg id="awards-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
 						
+						<div id="awards-list" class="collapse-content">
+							<div class="collapse-scroll-wrapper">
+								<ul class="p-6 pt-0 list-disc list-inside space-y-3 text-base text-gray-700 dark:text-gray-300">
+									
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">JRF Award Letter (NFOBC) (2025):</span> National Fellowship for Backward Classes Students (NFOBC) issued by MoSJE, Govt. of India. [cite: 43, 44, 40]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">UGC NET June 2025:</span> Qualified for Assistant Professor, awarded by University Grants Commission (UGC). [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">UGC NET Dec 2024:</span> Awarded by University Grants Commission (UGC). [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">UGC NET-JRF June 2024:</span> Qualified for Junior Research Fellowship and Assistant Professor (NFOBC/UGC). [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Silver+Elite Award (2024):</span> The Joy of Computing using Python by NPTEL. [cite: 45, 41]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">UGC NET Dec 2022:</span> Qualified for Assistant Professor, awarded by University Grants Commission (UGC). [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Merit Award (2014):</span> High School, RBIC Siddharth Nagar. [cite: 46, 42]</li>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
+						<button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('certifications-list')">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="certs_heading">Certifications & Workshops</h3>
+							<svg id="certifications-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+							</svg>
+						</button>
 						
-						<div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-translate-key="pub_poster">Poster Presentation</h3>
-                            <p class="mt-2 text-gray-700 dark:text-gray-300">
+						<div id="certifications-list" class="collapse-content">
+							<div class="collapse-scroll-wrapper">
+								<ul class="p-6 pt-0 list-disc list-inside space-y-3 text-base text-gray-700 dark:text-gray-300">
+									
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">6th International Conference on RAIT (2025):</span> Awarded by Indian Institute of Technology (Indian School of Mines), Dhanbad. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">HPC for Medical Image Processing and Computer Vision (2024):</span> Awarded by AICTE Training And Learning (ATAL) Academy. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Recent Advances in Computer Vision (2024):</span> Application and Implementation, awarded by National Institute of Technology Rourkela. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">International Workshop on Deep Learning and AI (DLAI8) (2024):</span> Awarded by IIIT Bhubanswar. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Towards AI Enabled Computer Vision (2024):</span> Self-Sponsored Shot-Term Online Course awarded by ABV-IIITM. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Deep Learning (2024):</span> Awarded by NPTEL. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Programming with Python (2021):</span> Awarded by Internshala. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Android App Development (2020):</span> Awarded by Internshala. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+										[cite_start]<li><span class="font-semibold">Summer Training on Java (2018):</span> Awarded by Softpro India Lucknow. [cite: 48]</li>
+										<span class="mt-2 flex space-x-4 text-lg">
+											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+												<i class="fas fa-link"></i>
+											</a>
+										</span>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+                <section id="publications" class="content-section hidden">
+    <div class="space-y-6 max-w-3xl mx-auto">
+
+        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
+            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('journal-list')">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_journal">Journal Articles</h3>
+                <svg id="journal-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            
+            <div id="journal-list" class="collapse-content">
+                <div class="collapse-scroll-wrapper">
+                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                            <p class="mt-2">
+                                P. K. Vishwakarma and B. K. Bhardwaj, "Challenges values for artificial intelligence research," Mukt Shabd Journal, vol. [cite_start]X, 2021. [cite: 23]
+                            </p>
+                            <span class="mt-2 flex space-x-4 text-lg">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Journal Link">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
+            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('conference-list')">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_conference">Conference Proceedings</h3>
+                <svg id="conference-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            
+            <div id="conference-list" class="collapse-content">
+                <div class="collapse-scroll-wrapper">
+                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                            <p class="mt-2">
+                                P. K. Vishwakarma, D. K. Singh, and A. Sahu, "Action recognition from egocentric videos using rgb + depth modalities," in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. [cite_start]DOI: 10.1109/RAIT65068.2025.11089208. [cite: 26, 27]
+                            </p>
+                            <span class="mt-2 flex space-x-4 text-lg">
+                                <a href="https://doi.org/10.1109/RAIT65068.2025.11089208" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="DOI Link">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
+            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('poster-list')">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_poster">Poster Presentations</h3>
+                <svg id="poster-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            
+            <div id="poster-list" class="collapse-content">
+                <div class="collapse-scroll-wrapper">
+                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+                            <p class="mt-2">
                                 P. K. Vishwakarma and A. Sahu, "Egocentric Action Recognition using Multimodal Datasets", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.
                             </p>
+                            <span class="mt-2 flex space-x-4 text-lg">
+                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </span>
                         </div>
-						
                     </div>
-                </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
             </div>
         </main>
     </div>
 
-    <!-- Footer -->
     <footer class="text-white text-center p-4 mt-16" id="footer">
         <p>&copy; <span id="current-year"></span> <span data-translate-key="footer_text">Pawanesh Kumar Vishwakarma. All Rights Reserved.</span></p>
 		<br/>
 		<ul class="footer-icon">
-					<!---<li><a href="https://www.instagram.com/pawanesh_in/" target="_blank">
-					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-						<path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.85s.012-3.585.07-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" clip-rule="evenodd"/>
-					</svg></a></li> --->
 					<li><a href="https://linkedin.com/in/pawanesh-in/" target="_blank">
 					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
 					</svg></a></li>
-					<!---<li><a href="https://github.com/pawaneshmnnit" target="_blank">
-					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-						<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-					</svg></a></li> --->
 				</ul>
     </footer>
 
@@ -382,7 +582,7 @@
                 nav_experience: "Experience",
                 nav_education: "Education",
                 nav_skills: "Skills",
-                nav_awards: "Certifications/Awards",
+                nav_awards: "Certifications/Awards", // Modified
                 nav_publications: "Publications",
                 photo_placeholder: "Image",
                 about_full: "I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.",
@@ -393,9 +593,11 @@
                 skills_web: "Web Development",
                 skills_db: "Databases",
                 skills_misc: "AI/ML/DL",
-                pub_journal: "Journal Article",
-                pub_conference: "Conference Proceeding",
-				pub_poster: "Poster Presentation",
+                pub_journal: "Journal Articles", // Modified
+                pub_conference: "Conference Proceedings", // Modified
+				pub_poster: "Poster Presentations", // Modified
+                awards_heading: "Awards & Qualifications", // New key
+                certs_heading: "Certifications & Workshops", // New key
                 footer_text: "Pawanesh Kumar Vishwakarma. All Rights Reserved."
             },
             hi: {
@@ -407,7 +609,7 @@
                 nav_experience: "अनुभव",
                 nav_education: "शिक्षा",
                 nav_skills: "कौशल",
-                nav_awards: "पुरस्कार",
+                nav_awards: "प्रमाणपत्र/पुरस्कार", // Modified
                 nav_publications: "प्रकाशन",
                 photo_placeholder: "फोटो",
                 about_full: "मैं मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद में कंप्यूटर विजन में विशेषज्ञता वाला एक समर्पित और उत्साही शोध अध्येता हूं। मेरा शोध अहंकार-केंद्रित वीडियो विश्लेषण के लिए मल्टीमॉडल दृष्टिकोण पर केंद्रित है। एक मजबूत अकादमिक पृष्ठभूमि और व्यावहारिक अनुभव के साथ, मैं जटिल समस्याओं को हल करने और कृत्रिम बुद्धिमत्ता की उन्नति में योगदान करने की चुनौती से प्रेरित हूं।",
@@ -421,6 +623,8 @@
                 pub_journal: "जर्नल आलेख",
                 pub_conference: "सम्मेलन की कार्यवाही",
                 pub_poster: "पोस्टर प्रस्तुति",
+                awards_heading: "पुरस्कार और योग्यताएँ", // New key
+                certs_heading: "प्रमाणपत्र और कार्यशालाएँ", // New key
                 footer_text: "पवनेश कुमार विश्वकर्मा। सर्वाधिकार सुरक्षित।"
             },
             de: { // German - Placeholder
@@ -432,7 +636,7 @@
                 nav_experience: "Erfahrung",
                 nav_education: "Bildung",
                 nav_skills: "Fähigkeiten",
-                nav_awards: "Auszeichnungen",
+                nav_awards: "Zertifizierungen/Auszeichnungen", // Modified
                 nav_publications: "Veröffentlichungen",
                 photo_placeholder: "Image",
                 about_full: "Ich bin ein engagierter und leidenschaftlicher Forschungsstipendiat am Motilal Nehru National Institute of Technology Allahabad und spezialisiere mich auf Computer Vision. Meine Forschung konzentriert sich auf multimodale Ansätze für die egozentrische Videoanalyse. Mit einem starken akademischen Hintergrund und praktischer Erfahrung treibt mich die Herausforderung an, komplexe Probleme zu lösen und zur Weiterentwicklung der künstlichen Intelligenz beizutragen.",
@@ -446,6 +650,8 @@
                 pub_journal: "Zeitschriftenartikel",
                 pub_conference: "Konferenzbeitrag",
 				pub_poster: "Posterpräsentation",
+                awards_heading: "Auszeichnungen & Qualifikationen", // New key
+                certs_heading: "Zertifizierungen & Workshops", // New key
                 footer_text: "Pawanesh Kumar Vishwakarma. Alle Rechte vorbehalten."
             },
             fr: { // French - Placeholder
@@ -457,12 +663,12 @@
                 nav_experience: "Expérience",
                 nav_education: "Éducation",
                 nav_skills: "Compétences",
-                nav_awards: "Prix",
+                nav_awards: "Certifications/Prix", // Modified
                 nav_publications: "Publications",
                 photo_placeholder: "Image",
                 about_full: "Je suis un chercheur dévoué et passionné au Motilal Nehru National Institute of Technology Allahabad, spécialisé en vision par ordinateur. Ma recherche se concentre sur les approches multimodales pour l'analyse vidéo égocentrique. Avec une solide formation académique et une expérience pratique, je suis motivé par le défi de résoudre des problèmes complexes et de contribuer à l'avancement de l'intelligence artificielle.",
                 experience_title_s: "Senior Chercheur",
-				 experience_title_s: "Junior Chercheur",
+				experience_title_s: "Junior Chercheur",
                 experience_org: "Département de CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Inde.",
                 skills_coding: "Langages de programmation",
                 skills_web: "Développement web",
@@ -471,6 +677,8 @@
                 pub_journal: "Article de journal",
                 pub_conference: "Actes de conférence",
 				pub_poster: "présentation par affiche",
+                awards_heading: "Prix & Qualifications", // New key
+                certs_heading: "Certifications & Ateliers", // New key
                 footer_text: "Pawanesh Kumar Vishwakarma. Tous droits réservés."
             }
         };
@@ -541,25 +749,18 @@
             localStorage.setItem('language', lang);
             if(event) event.preventDefault();
         }
+
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id.replace('-list', '-icon'));
+            
+            // Toggle the 'open' class for the smooth max-height transition
+            content.classList.toggle('open');
+            
+            // Toggle arrow rotation (up/down)
+            icon.classList.toggle('rotate-180');
+        }
     </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
