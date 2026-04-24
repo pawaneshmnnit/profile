@@ -52,7 +52,7 @@ body { font-family: 'Inter', sans-serif; }
     background-color: #db3218;
 }
 
-/* dropdown FIXED */
+/* dropdown */
 .lang-menu-content {
     display: none;
     position: absolute;
@@ -106,7 +106,7 @@ body { font-family: 'Inter', sans-serif; }
 <!-- LANGUAGE -->
 <div class="lang-menu relative">
 <button id="lang-btn" class="border px-3 py-1 rounded-md">
-<span data-translate-key="lang_button">Languages ▾</span>
+<span>Languages ▾</span>
 </button>
 
 <div id="lang-menu" class="lang-menu-content">
@@ -128,7 +128,7 @@ body { font-family: 'Inter', sans-serif; }
 <br><br>
 
 <div class="text-center pt-12">
-<h1 class="text-4xl font-bold text-gray-900 dark:text-white" data-translate-key="name">
+<h1 class="text-4xl font-bold text-gray-900 dark:text-white">
 Pawanesh Kumar Vishwakarma
 </h1>
 </div>
@@ -136,6 +136,7 @@ Pawanesh Kumar Vishwakarma
 <hr>
 </header>
 
+<!-- FIXED NAV (removed hidden) -->
 <nav id="main-nav" class="flex flex-wrap justify-center gap-2 mb-12">
 <button class="nav-button active px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="about">About</button>
 <button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="experience">Experience</button>
@@ -187,12 +188,11 @@ Pawanesh Kumar Vishwakarma
 document.addEventListener("DOMContentLoaded", () => {
 
     // Theme
-    const themeToggle = document.getElementById("theme-toggle");
-    themeToggle.addEventListener("click", () => {
+    document.getElementById("theme-toggle").addEventListener("click", () => {
         document.documentElement.classList.toggle("dark");
     });
 
-    // Language Dropdown FIXED
+    // Language dropdown
     const langBtn = document.getElementById("lang-btn");
     const langMenu = document.getElementById("lang-menu");
 
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("current-year").textContent = new Date().getFullYear();
 });
 
-// FIXED function
+// FIXED (NO translations crash)
 function switchLanguage(lang) {
     localStorage.setItem('language', lang);
 
