@@ -116,12 +116,12 @@
     }
 
     el.innerHTML = items.map(function (it) {
-      return `
-        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-          <li><strong>${escapeHtml(safe(it.title))}:</strong> ${escapeHtml(safe(it.description))}</li>
-          ${it.link ? `<a href="${escapeHtml(it.link)}" target="_blank" class="text-blue-500">Link</a>` : ''}
-        </div>
-      `;
+    return `
+      <li class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+        <strong>${escapeHtml(safe(it.title))}:</strong> ${escapeHtml(safe(it.description))}
+        ${it.link ? `<a href="${escapeHtml(it.link)}" target="_blank" class="text-blue-500 ml-2">Link</a>` : ''}
+      </li>
+    `;
     }).join('');
   }
 
