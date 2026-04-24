@@ -20,6 +20,13 @@
       "citation": "P. K. Vishwakarma and A. Sahu, \"Egocentric Action Recognition using Multimodal Datasets\", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.",
       "link": "https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities",
       "github": ""
+    },
+    {
+      "id": "conference-1777009267864-dndi",
+      "type": "conference",
+      "citation": "EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation - 28th ICPR, Lyon France. (Accepted)",
+      "link": "",
+      "github": ""
     }
   ]
 }
