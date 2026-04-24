@@ -199,18 +199,18 @@
       "github": ""
     },
     {
-      "id": "conference-2025-rait",
-      "type": "conference",
-      "citation": "P. K. Vishwakarma, D. K. Singh, and A. Sahu, \"Action recognition from egocentric videos using rgb + depth modalities,\" in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. DOI: 10.1109/RAIT65068.2025.11089208.",
-      "link": "https://doi.org/10.1109/RAIT65068.2025.11089208",
-      "github": ""
-    },
-    {
       "type": "conference",
       "citation": "\"EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation\", in 28th - International Conference on Pattern Recognition Lyon, France [Accepted]",
       "link": "",
       "github": "",
       "id": "publications-1777024637197-wato"
+    },
+    {
+      "id": "conference-2025-rait",
+      "type": "conference",
+      "citation": "P. K. Vishwakarma, D. K. Singh, and A. Sahu, \"Action recognition from egocentric videos using rgb + depth modalities,\" in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. DOI: 10.1109/RAIT65068.2025.11089208.",
+      "link": "https://doi.org/10.1109/RAIT65068.2025.11089208",
+      "github": ""
     },
     {
       "id": "poster-2025-sodhsangam",
