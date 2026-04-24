@@ -1,768 +1,252 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pawanesh | MNNIT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawanesh | MNNIT</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+window.tailwind = window.tailwind || {};
+tailwind.config = {
+    safelist: [
+        { pattern: /bg-(blue|green|yellow|purple|red|pink|indigo|teal)-(100|900)/ },
+        { pattern: /text-(blue|green|yellow|purple|red|pink|indigo|teal)-(300|800)/ }
+    ]
+};
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <style>
-        /* Custom Styles */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Style for the scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        .dark ::-webkit-scrollbar-track {
-            background: #1f2937;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #555;
-			color:white;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            left: -6px;
-            top: 4px;
-            background-color: #3b82f6; /* blue-500 */
-            border: 2px solid #ffffff;
-        }
-		.dark #experience{
-		color: white;
-		}
-        .dark .timeline-item::before {
-            border-color: #1f2937; /* dark:bg-gray-800 */
-			
-        }
-        /* Active state for navigation tabs */
-        .nav-button.active {
-            background-color: #1f2937;
-            color: #ffffff;
-        }
-        .dark .nav-button.active {
-            background-color: #db3218; 
-        }
-        /* Language Dropdown */
-        .lang-menu {
-            position: relative;
-        }
-        .lang-menu-content {
-            display: none;
-            position: relative;
-            right: 0;
-            top: 100%;
-            background-color: #ffffff;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 50;
-            border-radius: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        .dark .lang-menu-content {
-            background-color: #db3218;
-        }
-        .lang-menu:hover .lang-menu-content {
-            display: block;
-        }
-        .lang-menu-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dark .lang-menu-content a {
-            color: white;
-        }
-		.dark body {
-            font-family: 'Inter', sans-serif;
-			color:white;
-			background-color:black;
-        }
-		.dark .text-4xl{
-		color:white;
-		}
-		.dark .text-white{
-		color:white;
-		}
-		#footer{
-		background-color:#374151;
-		}
-		.dark #footer{
-		background-color:#db3218;
-		}
-        .lang-menu-content a:hover {
-            background-color: #f1f1f1;
-        }
-        .dark .lang-menu-content a:hover {
-            background-color: #374151;
-        }
-		.dark .bg-gray-100{
-		background-color:whitesmoke;
-		color: black;
-		}
-		
-		.footer-icon{
-		display:inline-block;
-		}
+body { font-family: 'Inter', sans-serif; }
 
-    /* ... existing custom styles ... */
+/* scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+.dark ::-webkit-scrollbar-track { background: #1f2937; }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; }
+.dark ::-webkit-scrollbar-thumb { background: #555; }
 
-    /* New: For smooth dropdown transition and content overflow handling */
-    .collapse-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-    }
-    .collapse-content.open {
-        max-height: 1000px; /* Transition height */
-        padding-top: 1.5rem;
-    }
-    
-    /* NEW: Style for scrollable content inside the opened card */
-    .collapse-scroll-wrapper {
-        max-height: 600px; /* Define the max visible height for content */
-        overflow-y: auto; /* Enable vertical scrolling if content exceeds 600px */
-        padding-right: 1rem; /* Added padding to prevent content hugging the scrollbar */
-    }
+/* timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: -6px;
+    top: 4px;
+    background-color: #3b82f6;
+    border: 2px solid #ffffff;
+}
 
-    /* ... rest of your custom styles ... */
+/* nav */
+.nav-button.active {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+.dark .nav-button.active {
+    background-color: #db3218;
+}
 
-		
-    </style>
+/* dropdown FIXED */
+.lang-menu-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 50;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+.lang-menu-content.open {
+    display: block;
+}
+.dark .lang-menu-content {
+    background-color: #374151;
+}
+
+/* collapse */
+.collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.collapse-content.open {
+    max-height: 1000px;
+}
+
+.collapse-scroll-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
+#footer { background-color:#374151; }
+.dark #footer { background-color:#db3218; }
+
+.footer-icon { display:inline-block; }
+</style>
 </head>
-<body class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-900 transition-colors duration-300">
 
-    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8">
-        
-        <header class="relative mb-8">
-            <div class="absolute top-0 right-0 flex items-center space-x-4 z-20">
-                <div class="lang-menu">
-                    <button class="border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                        <span data-translate-key="lang_button">Languages ▾</span>
-                    </button>
-                    <div class="lang-menu-content text-left">
-                        <a href="#" onclick="switchLanguage('en')">English</a>
-                        <a href="#" onclick="switchLanguage('hi')">हिंदी (Hindi)</a>
-                        <a href="#" onclick="switchLanguage('de')">Deutsch (German)</a>
-                        <a href="#" onclick="switchLanguage('fr')">Français (French)</a>
-                    </div>
-                </div>
-                <button id="theme-toggle" class="border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                    <span class="dark:hidden" data-translate-key="theme_dark">Dark</span>
-                    <span class="hidden dark:inline" data-translate-key="theme_light">Light</span>
-                </button>
-            </div>
-            
-            <div class="lg:hidden absolute top-0 left-0">
-                 <button id="menu-toggle" class="p-2 rounded-md text-gray-700 dark:text-gray-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                 </button>
-            </div>
-			<br/>
-			<br/>
-            <div class="text-center pt-12 lg:pt-0">
-                <h1 class="text-4xl font-bold text-gray-900 dark:text-white" data-translate-key="name">Pawanesh Kumar Vishwakarma</h1>
-				
-                <div class="mt-4 flex justify-center items-center space-x-2 text-gray-600 dark:text-gray-400">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    <span>pawanesh.2023rcs04@mnnit.ac.in</span>
-                </div>
-            </div>
-			<br/>
-			<hr/>
-        </header>
+<body class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
-        <nav id="main-nav" class="hidden lg:flex flex-col lg:flex-row lg:flex-wrap lg:justify-center items-center space-y-2 lg:space-y-0 gap-2 sm:gap-4 mb-12">
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition active" data-target="about" data-translate-key="nav_about">About Me</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="experience" data-translate-key="nav_experience">Experience</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="education" data-translate-key="nav_education">Education</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="skills" data-translate-key="nav_skills">Skills</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="awards" data-translate-key="nav_awards">Certifications/Awards</button>
-            <button class="nav-button w-full lg:w-auto bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-md transition" data-target="publications" data-translate-key="nav_publications">Publications</button>
-        </nav>
+<div class="container mx-auto max-w-4xl px-4 py-8">
 
-        <main>
-           <div class="flex justify-center mb-12">
-                <div class="w-40 h-45 bg-gray-600 rounded-lg flex items-center justify-center">
-                    <img src="pic2.jpg"/>
-                </div>
-            </div>
+<header class="relative mb-8">
 
-            <div id="content-area">
-                <section id="about" class="content-section">
-                    <p class="text-lg text-center leading-relaxed max-w-3xl mx-auto" data-translate-key="about_full">
-                        I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.
-                    </p>
-					<br/>	
-				<center>
-	            <a href="csed_phd_scholar.html" target="_blank" class="relative inline-flex items-center justify-center px-6 py-2 rounded-lg font-semibold text-white bg-red-600 hover:bg-gray-700 hover:scale-105 transition-transform duration-200 shadow-md">
-	                <span>PhD Scholars | CSE Department</span>
-	                <i class="fas fa-arrow-right ml-2"></i>
-	                <div class="animate-ping bg-green-400 rounded-full absolute -top-1 -right-1 w-4 h-4"></div>
-	                <div class="bg-green-500 rounded-full absolute -top-1 -right-1 w-4 h-4 border-2 border-white"></div>
-	            </a>
-						</center>
-            </section>
+<div class="absolute top-0 right-0 flex items-center space-x-4 z-20">
 
-                <section id="experience" class="content-section hidden">
-                    <div class="relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 max-w-2xl mx-auto">
-                        <div class="timeline-item">
-							<p class="text-sm text-gray-500 dark:text-gray-400">August 2025 - Current</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white" data-translate-key="experience_title_s">Senior Research Fellow</h3>
-							<br/>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">August 2023 - August 2025</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white" data-translate-key="experience_title_j">Junior Research Fellow</h3>
-                            <p class="text-md text-gray-600 dark:text-gray-300" data-translate-key="experience_org">Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India.</p>
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="education" class="content-section hidden">
-                     <div class="relative border-l-2 border-gray-200 dark:border-gray-700 pl-8 max-w-2xl mx-auto">
-                        <div class="mb-10 timeline-item">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Ph.D. in Computer Science & Engineering</h3>
-                            <p class="text-md text-gray-600 dark:text-gray-300">Motilal Nehru National Institute of Technology Allahabad, Prayagraj</p>
-                        </div>
-                        <div class="mb-10 timeline-item">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Post-Graduation</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">MCA, Computer Application</h3>
-                            <p class="text-md text-gray-600 dark:text-gray-300">Institute of Engineering & Technology, Dr. RML University Ayodhya</p>
-							
-                        </div>
-                         <div class="timeline-item">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Graduation</p>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">BCA, Computer Application</h3>
-                            <p class="text-md text-gray-600 dark:text-gray-300">Dr. RML University Ayodhya</p>
-                        </div>
-                    </div>
-                </section>
+<!-- LANGUAGE -->
+<div class="lang-menu relative">
+<button id="lang-btn" class="border px-3 py-1 rounded-md">
+<span data-translate-key="lang_button">Languages ▾</span>
+</button>
 
-                <section id="skills" class="content-section hidden">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_coding">Coding Languages</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">C/C++</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Python</span>
-                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">PHP</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">SQL</span>
-                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">LaTeX</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_web">Web Development</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">HTML</span>
-                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">CSS</span>
-                                <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">JavaScript</span>
-                                 <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Apache</span>
-                                  <span class="bg-green-100 text-green-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">XAMPP</span>
-                            </div>
-                        </div>
-                         <div>
-                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_db">Databases</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">MySQL</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">SQLite</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3" data-translate-key="skills_misc">AI/ML/DL</h3>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Deep Learning</span>
-                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Computer Vision</span>
-                                <span class="bg-purple-100 text-purple-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Image Processing</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section id="awards" class="content-section hidden">
-				<div class="space-y-6 max-w-3xl mx-auto">
+<div id="lang-menu" class="lang-menu-content">
+<a href="#" data-lang="en">English</a>
+<a href="#" data-lang="hi">Hindi</a>
+<a href="#" data-lang="de">German</a>
+<a href="#" data-lang="fr">French</a>
+</div>
+</div>
 
-					<div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
-						<button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('awards-list')">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="awards_heading">Awards & Qualifications</h3>
-							<svg id="awards-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-							</svg>
-						</button>
-						
-						<div id="awards-list" class="collapse-content">
-							<div class="collapse-scroll-wrapper">
-								<ul class="p-6 pt-0 list-disc list-inside space-y-3 text-base text-gray-700 dark:text-gray-300">
-									
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">JRF Award Letter (NFOBC) (2025):</span> National Fellowship for Backward Classes Students (NFOBC) issued by MoSJE, Govt. of India.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="https://nbcfdc.gov.in/nbcfdc/web/sites/default/files/2025-09/NFOBC_NETJune24_REVISED_040425_1.pdf" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link" target="_blank">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
+<!-- THEME -->
+<button id="theme-toggle" class="border px-3 py-1 rounded-md">
+<span class="dark:hidden">Dark</span>
+<span class="hidden dark:inline">Light</span>
+</button>
 
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">UGC NET June 2025:</span> Qualified for Assistant Professor, awarded by University Grants Commission (UGC).</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
+</div>
 
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">UGC NET Dec 2024:</span> Awarded by University Grants Commission (UGC).</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">UGC NET-JRF June 2024:</span> Qualified for Junior Research Fellowship and Assistant Professor (NFOBC/UGC). </li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
+<br><br>
 
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Silver+Elite Award (2024):</span> The Joy of Computing using Python by NPTEL.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
+<div class="text-center pt-12">
+<h1 class="text-4xl font-bold text-gray-900 dark:text-white" data-translate-key="name">
+Pawanesh Kumar Vishwakarma
+</h1>
+</div>
 
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">UGC NET Dec 2022:</span> Qualified for Assistant Professor, awarded by University Grants Commission (UGC).</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Merit Award (2014):</span> High School, RBIC Siddharth Nagar. </li>
-									</div>
-								</ul>
-							</div>
-						</div>
-					</div>
+<hr>
+</header>
 
-					<div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
-						<button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('certifications-list')">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="certs_heading">Certifications & Workshops</h3>
-							<svg id="certifications-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-							</svg>
-						</button>
-						
-						<div id="certifications-list" class="collapse-content">
-							<div class="collapse-scroll-wrapper">
-								<ul class="p-6 pt-0 list-disc list-inside space-y-3 text-base text-gray-700 dark:text-gray-300">
-									
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">6th International Conference on RAIT (2025):</span> Awarded by Indian Institute of Technology (Indian School of Mines), Dhanbad.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">HPC for Medical Image Processing and Computer Vision (2024):</span> Awarded by AICTE Training And Learning (ATAL) Academy.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Recent Advances in Computer Vision (2024):</span> Application and Implementation, awarded by National Institute of Technology Rourkela.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">International Workshop on Deep Learning and AI (DLAI8) (2024):</span> Awarded by IIIT Bhubanswar.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Towards AI Enabled Computer Vision (2024):</span> Self-Sponsored Shot-Term Online Course awarded by ABV-IIITM. </li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Deep Learning (2024):</span> Awarded by NPTEL.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Programming with Python (2021):</span> Awarded by Internshala.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Android App Development (2020):</span> Awarded by Internshala.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-									<div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-										<li><span class="font-semibold">Summer Training on Java (2018):</span> Awarded by Softpro India Lucknow.</li>
-										<span class="mt-2 flex space-x-4 text-lg">
-											<a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link">
-												<i class="fas fa-link"></i>
-											</a>
-										</span>
-									</div>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+<nav id="main-nav" class="hidden lg:flex flex-wrap justify-center gap-2 mb-12">
+<button class="nav-button active px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="about">About</button>
+<button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="experience">Experience</button>
+<button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="education">Education</button>
+<button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="skills">Skills</button>
+<button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="awards">Awards</button>
+<button class="nav-button px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded" data-target="publications">Publications</button>
+</nav>
 
-                <section id="publications" class="content-section hidden">
-    <div class="space-y-6 max-w-3xl mx-auto">
+<main>
+<div class="flex justify-center mb-12">
+<img src="pic2.jpg" alt="Profile" loading="lazy" class="w-40 h-40 rounded-lg object-cover">
+</div>
 
-        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
-            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('journal-list')">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_journal">Journal Articles</h3>
-                <svg id="journal-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            
-            <div id="journal-list" class="collapse-content">
-                <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma and B. K. Bhardwaj, "Challenges values for artificial intelligence research," Mukt Shabd Journal, vol. X, 2021.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Journal Link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
-            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('conference-list')">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_conference">Conference Proceedings</h3>
-                <svg id="conference-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            
-            <div id="conference-list" class="collapse-content">
-                <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma, D. K. Singh, and A. Sahu, "Action recognition from egocentric videos using rgb + depth modalities," in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. DOI: 10.1109/RAIT65068.2025.11089208.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="https://doi.org/10.1109/RAIT65068.2025.11089208" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="DOI Link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-700 shadow-xl rounded-lg overflow-hidden">
-            <button class="w-full text-left p-6 flex justify-between items-center bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150" onclick="toggleDropdown('poster-list')">
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white" data-translate-key="pub_poster">Poster Presentations</h3>
-                <svg id="poster-icon" class="w-6 h-6 text-gray-700 dark:text-gray-300 transform transition-transform duration-300 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            
-            <div id="poster-list" class="collapse-content">
-                <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma and A. Sahu, "Egocentric Action Recognition using Multimodal Datasets", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link" target="_blank">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+<section id="about" class="content-section">
+<p id="about-text">Loading…</p>
 </section>
-            </div>
-        </main>
-    </div>
 
-    <footer class="text-white text-center p-4 mt-16" id="footer">
-        <p>&copy; <span id="current-year"></span> <span data-translate-key="footer_text">Pawanesh Kumar Vishwakarma. All Rights Reserved.</span></p>
-		<br/>
-		<ul class="footer-icon">
-					<li><a href="https://linkedin.com/in/pawanesh-in/" target="_blank">
-					<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-						<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-					</svg></a></li>
-				</ul>
-    </footer>
+<section id="experience" class="content-section hidden">
+<div id="experience-items">Loading…</div>
+</section>
 
-   <script>
-        // --- TRANSLATION DATA ---
-        const translations = {
-            en: {
-                name: "Pawanesh K. Vishwakarma",
-                lang_button: "Languages ▾",
-                theme_dark: "Dark/Light",
-                theme_light: "Light",
-                nav_about: "About Me",
-                nav_experience: "Experience",
-                nav_education: "Education",
-                nav_skills: "Skills",
-                nav_awards: "Certifications/Awards", // Modified
-                nav_publications: "Publications",
-                photo_placeholder: "Image",
-                about_full: "I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.",
-                experience_title_s: "Senior Research Fellow",
-				experience_title_j: "Junior Research Fellow",
-                experience_org: "Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India.",
-                skills_coding: "Coding Languages",
-                skills_web: "Web Development",
-                skills_db: "Databases",
-                skills_misc: "AI/ML/DL",
-                pub_journal: "Journal Articles", // Modified
-                pub_conference: "Conference Proceedings", // Modified
-				pub_poster: "Poster Presentations", // Modified
-                awards_heading: "Awards & Qualifications", // New key
-                certs_heading: "Certifications & Workshops", // New key
-                footer_text: "Pawanesh Kumar Vishwakarma. All Rights Reserved."
-            },
-            hi: {
-                name: "पवनेश कु. विश्वकर्मा",
-                lang_button: "भाषाएँ ▾",
-                theme_dark: "अंधेरा/उजाला",
-                theme_light: "लाइट",
-                nav_about: "मेरे बारे में",
-                nav_experience: "अनुभव",
-                nav_education: "शिक्षा",
-                nav_skills: "कौशल",
-                nav_awards: "प्रमाणपत्र/पुरस्कार", // Modified
-                nav_publications: "प्रकाशन",
-                photo_placeholder: "फोटो",
-                about_full: "मैं मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद में कंप्यूटर विजन में विशेषज्ञता वाला एक समर्पित और उत्साही शोध अध्येता हूं। मेरा शोध अहंकार-केंद्रित वीडियो विश्लेषण के लिए मल्टीमॉडल दृष्टिकोण पर केंद्रित है। एक मजबूत अकादमिक पृष्ठभूमि और व्यावहारिक अनुभव के साथ, मैं जटिल समस्याओं को हल करने और कृत्रिम बुद्धिमत्ता की उन्नति में योगदान करने की चुनौती से प्रेरित हूं।",
-                experience_title_s: "वरिष्ठ शोध अध्येता",
-				experience_title_j: "कनिष्ठ शोध अध्येता",
-                experience_org: "सीएसई विभाग, मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद, प्रयागराज-भारत।",
-                skills_coding: "कोडिंग भाषाएं",
-                skills_web: "वेब डेवलपमेंट",
-                skills_db: "डेटाबेस",
-                skills_misc: "विविध",
-                pub_journal: "जर्नल आलेख",
-                pub_conference: "सम्मेलन की कार्यवाही",
-                pub_poster: "पोस्टर प्रस्तुति",
-                awards_heading: "पुरस्कार और योग्यताएँ", // New key
-                certs_heading: "प्रमाणपत्र और कार्यशालाएँ", // New key
-                footer_text: "पवनेश कुमार विश्वकर्मा। सर्वाधिकार सुरक्षित।"
-            },
-            de: { // German - Placeholder
-                name: "Pawanesh K. Vishwakarma",
-                lang_button: "Sprachen ▾",
-                theme_dark: "dunkel/oder hell",
-                theme_light: "Hell",
-                nav_about: "Über mich",
-                nav_experience: "Erfahrung",
-                nav_education: "Bildung",
-                nav_skills: "Fähigkeiten",
-                nav_awards: "Zertifizierungen/Auszeichnungen", // Modified
-                nav_publications: "Veröffentlichungen",
-                photo_placeholder: "Image",
-                about_full: "Ich bin ein engagierter und leidenschaftlicher Forschungsstipendiat am Motilal Nehru National Institute of Technology Allahabad und spezialisiere mich auf Computer Vision. Meine Forschung konzentriert sich auf multimodale Ansätze für die egozentrische Videoanalyse. Mit einem starken akademischen Hintergrund und praktischer Erfahrung treibt mich die Herausforderung an, komplexe Probleme zu lösen und zur Weiterentwicklung der künstlichen Intelligenz beizutragen.",
-                experience_title_s: "Seniorin Forschungsstipendiat",
-				experience_title_j: "Juniorin Forschungsstipendiat",
-                experience_org: "Abteilung für CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Indien.",
-                skills_coding: "Programmiersprachen",
-                skills_web: "Web-Entwicklung",
-                skills_db: "Datenbanken",
-                skills_misc: "Sonstiges",
-                pub_journal: "Zeitschriftenartikel",
-                pub_conference: "Konferenzbeitrag",
-				pub_poster: "Posterpräsentation",
-                awards_heading: "Auszeichnungen & Qualifikationen", // New key
-                certs_heading: "Zertifizierungen & Workshops", // New key
-                footer_text: "Pawanesh Kumar Vishwakarma. Alle Rechte vorbehalten."
-            },
-            fr: { // French - Placeholder
-                name: "Pawanesh K. Vishwakarma",
-                lang_button: "Langues ▾",
-                theme_dark: "foncé ou clair",
-                theme_light: "Clair",
-                nav_about: "À propos de moi",
-                nav_experience: "Expérience",
-                nav_education: "Éducation",
-                nav_skills: "Compétences",
-                nav_awards: "Certifications/Prix", // Modified
-                nav_publications: "Publications",
-                photo_placeholder: "Image",
-                about_full: "Je suis un chercheur dévoué et passionné au Motilal Nehru National Institute of Technology Allahabad, spécialisé en vision par ordinateur. Ma recherche se concentre sur les approches multimodales pour l'analyse vidéo égocentrique. Avec une solide formation académique et une expérience pratique, je suis motivé par le défi de résoudre des problèmes complexes et de contribuer à l'avancement de l'intelligence artificielle.",
-                experience_title_s: "Senior Chercheur",
-				experience_title_s: "Junior Chercheur",
-                experience_org: "Département de CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Inde.",
-                skills_coding: "Langages de programmation",
-                skills_web: "Développement web",
-                skills_db: "Bases de données",
-                skills_misc: "Divers",
-                pub_journal: "Article de journal",
-                pub_conference: "Actes de conférence",
-				pub_poster: "présentation par affiche",
-                awards_heading: "Prix & Qualifications", // New key
-                certs_heading: "Certifications & Ateliers", // New key
-                footer_text: "Pawanesh Kumar Vishwakarma. Tous droits réservés."
-            }
-        };
+<section id="education" class="content-section hidden">
+<div id="education-items">Loading…</div>
+</section>
 
-        // --- CORE SCRIPT LOGIC ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Theme Toggler
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const applyTheme = (theme) => {
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-            };
-            const savedTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(savedTheme);
-            themeToggleBtn.addEventListener('click', () => {
-                const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-                localStorage.setItem('color-theme', newTheme);
-                applyTheme(newTheme);
-            });
+<section id="skills" class="content-section hidden">
+<div id="skills-groups">Loading…</div>
+</section>
 
-            // 2. Set Current Year in Footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // 3. Language Switcher
-            const savedLang = localStorage.getItem('language') || 'en';
-            switchLanguage(savedLang);
+<section id="awards" class="content-section hidden">
+<ul id="awards-items"><li>Loading…</li></ul>
+</section>
 
-            // 4. Tabbed and Hamburger Navigation
-            const menuToggle = document.getElementById('menu-toggle');
-            const mainNav = document.getElementById('main-nav');
-            const navButtons = document.querySelectorAll('.nav-button');
-            const contentSections = document.querySelectorAll('.content-section');
+<section id="publications" class="content-section hidden">
+<div id="journal-items"></div>
+<div id="conference-items"></div>
+<div id="poster-items"></div>
+</section>
 
-            // Hamburger menu toggle
-            menuToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('hidden');
-            });
+</main>
+</div>
 
-            // Tab switching logic
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.dataset.target;
+<footer class="text-white text-center p-4 mt-16" id="footer">
+<p>&copy; <span id="current-year"></span> Pawanesh Kumar Vishwakarma</p>
+</footer>
 
-                    // Update button active states
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-                    // Show/hide content sections
-                    contentSections.forEach(section => {
-                        section.classList.toggle('hidden', section.id !== targetId);
-                    });
+    // Theme
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+    });
 
-                    // Hide hamburger menu after selection on mobile
-                    if (window.innerWidth < 1024) { // Tailwind's lg breakpoint
-                        mainNav.classList.add('hidden');
-                    }
-                });
+    // Language Dropdown FIXED
+    const langBtn = document.getElementById("lang-btn");
+    const langMenu = document.getElementById("lang-menu");
+
+    langBtn.addEventListener("click", () => {
+        langMenu.classList.toggle("open");
+    });
+
+    document.querySelectorAll("[data-lang]").forEach(el => {
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
+            const lang = el.dataset.lang;
+            switchLanguage(lang);
+            langMenu.classList.remove("open");
+        });
+    });
+
+    // Nav
+    const navButtons = document.querySelectorAll(".nav-button");
+    const sections = document.querySelectorAll(".content-section");
+
+    navButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            navButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            sections.forEach(sec => {
+                sec.classList.toggle("hidden", sec.id !== btn.dataset.target);
             });
         });
+    });
 
-        function switchLanguage(lang) {
-            if (!translations[lang]) return;
-            document.querySelectorAll('[data-translate-key]').forEach(el => {
-                const key = el.getAttribute('data-translate-key');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            localStorage.setItem('language', lang);
-            if(event) event.preventDefault();
-        }
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+});
 
-        function toggleDropdown(id) {
-            const content = document.getElementById(id);
-            const icon = document.getElementById(id.replace('-list', '-icon'));
-            
-            // Toggle the 'open' class for the smooth max-height transition
-            content.classList.toggle('open');
-            
-            // Toggle arrow rotation (up/down)
-            icon.classList.toggle('rotate-180');
+// FIXED function
+function switchLanguage(lang) {
+    if (!translations[lang]) return;
+
+    document.querySelectorAll('[data-translate-key]').forEach(el => {
+        const key = el.getAttribute('data-translate-key');
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
         }
-    </script>
+    });
+
+    localStorage.setItem('language', lang);
+
+    if (window.SiteLoader?.setLanguage) {
+        window.SiteLoader.setLanguage(lang);
+    }
+}
+</script>
+
+<script src="site-loader.js"></script>
 
 </body>
 </html>
