@@ -465,6 +465,7 @@
 				</div>
 			</section>
 
+                <!-- === PUBLICATIONS SECTION — now dynamic via publications.json === -->
                 <section id="publications" class="content-section hidden">
     <div class="space-y-6 max-w-3xl mx-auto">
 
@@ -478,21 +479,7 @@
             
             <div id="journal-list" class="collapse-content">
                 <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma and B. K. Bhardwaj, "Challenges values for artificial intelligence research," Mukt Shabd Journal, vol. X, 2021.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Journal Link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
+                    <div id="journal-items" class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300"></div>
                 </div>
             </div>
         </div>
@@ -507,21 +494,7 @@
             
             <div id="conference-list" class="collapse-content">
                 <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma, D. K. Singh, and A. Sahu, "Action recognition from egocentric videos using rgb + depth modalities," in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. DOI: 10.1109/RAIT65068.2025.11089208.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="https://doi.org/10.1109/RAIT65068.2025.11089208" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="DOI Link">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
+                    <div id="conference-items" class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300"></div>
                 </div>
             </div>
         </div>
@@ -536,21 +509,7 @@
             
             <div id="poster-list" class="collapse-content">
                 <div class="collapse-scroll-wrapper">
-                    <div class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300">
-                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-                            <p class="mt-2">
-                                P. K. Vishwakarma and A. Sahu, "Egocentric Action Recognition using Multimodal Datasets", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.
-                            </p>
-                            <span class="mt-2 flex space-x-4 text-lg">
-                                <a href="https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" title="Link" target="_blank">
-                                    <i class="fas fa-link"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200" title="GitHub Code">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
+                    <div id="poster-items" class="p-6 pt-0 space-y-4 text-base text-gray-700 dark:text-gray-300"></div>
                 </div>
             </div>
         </div>
@@ -584,7 +543,7 @@
                 nav_experience: "Experience",
                 nav_education: "Education",
                 nav_skills: "Skills",
-                nav_awards: "Certifications/Awards", // Modified
+                nav_awards: "Certifications/Awards",
                 nav_publications: "Publications",
                 photo_placeholder: "Image",
                 about_full: "I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.",
@@ -595,11 +554,11 @@
                 skills_web: "Web Development",
                 skills_db: "Databases",
                 skills_misc: "AI/ML/DL",
-                pub_journal: "Journal Articles", // Modified
-                pub_conference: "Conference Proceedings", // Modified
-				pub_poster: "Poster Presentations", // Modified
-                awards_heading: "Awards & Qualifications", // New key
-                certs_heading: "Certifications & Workshops", // New key
+                pub_journal: "Journal Articles",
+                pub_conference: "Conference Proceedings",
+				pub_poster: "Poster Presentations",
+                awards_heading: "Awards & Qualifications",
+                certs_heading: "Certifications & Workshops",
                 footer_text: "Pawanesh Kumar Vishwakarma. All Rights Reserved."
             },
             hi: {
@@ -611,7 +570,7 @@
                 nav_experience: "अनुभव",
                 nav_education: "शिक्षा",
                 nav_skills: "कौशल",
-                nav_awards: "प्रमाणपत्र/पुरस्कार", // Modified
+                nav_awards: "प्रमाणपत्र/पुरस्कार",
                 nav_publications: "प्रकाशन",
                 photo_placeholder: "फोटो",
                 about_full: "मैं मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद में कंप्यूटर विजन में विशेषज्ञता वाला एक समर्पित और उत्साही शोध अध्येता हूं। मेरा शोध अहंकार-केंद्रित वीडियो विश्लेषण के लिए मल्टीमॉडल दृष्टिकोण पर केंद्रित है। एक मजबूत अकादमिक पृष्ठभूमि और व्यावहारिक अनुभव के साथ, मैं जटिल समस्याओं को हल करने और कृत्रिम बुद्धिमत्ता की उन्नति में योगदान करने की चुनौती से प्रेरित हूं।",
@@ -625,11 +584,11 @@
                 pub_journal: "जर्नल आलेख",
                 pub_conference: "सम्मेलन की कार्यवाही",
                 pub_poster: "पोस्टर प्रस्तुति",
-                awards_heading: "पुरस्कार और योग्यताएँ", // New key
-                certs_heading: "प्रमाणपत्र और कार्यशालाएँ", // New key
+                awards_heading: "पुरस्कार और योग्यताएँ",
+                certs_heading: "प्रमाणपत्र और कार्यशालाएँ",
                 footer_text: "पवनेश कुमार विश्वकर्मा। सर्वाधिकार सुरक्षित।"
             },
-            de: { // German - Placeholder
+            de: {
                 name: "Pawanesh K. Vishwakarma",
                 lang_button: "Sprachen ▾",
                 theme_dark: "dunkel/oder hell",
@@ -638,7 +597,7 @@
                 nav_experience: "Erfahrung",
                 nav_education: "Bildung",
                 nav_skills: "Fähigkeiten",
-                nav_awards: "Zertifizierungen/Auszeichnungen", // Modified
+                nav_awards: "Zertifizierungen/Auszeichnungen",
                 nav_publications: "Veröffentlichungen",
                 photo_placeholder: "Image",
                 about_full: "Ich bin ein engagierter und leidenschaftlicher Forschungsstipendiat am Motilal Nehru National Institute of Technology Allahabad und spezialisiere mich auf Computer Vision. Meine Forschung konzentriert sich auf multimodale Ansätze für die egozentrische Videoanalyse. Mit einem starken akademischen Hintergrund und praktischer Erfahrung treibt mich die Herausforderung an, komplexe Probleme zu lösen und zur Weiterentwicklung der künstlichen Intelligenz beizutragen.",
@@ -652,11 +611,11 @@
                 pub_journal: "Zeitschriftenartikel",
                 pub_conference: "Konferenzbeitrag",
 				pub_poster: "Posterpräsentation",
-                awards_heading: "Auszeichnungen & Qualifikationen", // New key
-                certs_heading: "Zertifizierungen & Workshops", // New key
+                awards_heading: "Auszeichnungen & Qualifikationen",
+                certs_heading: "Zertifizierungen & Workshops",
                 footer_text: "Pawanesh Kumar Vishwakarma. Alle Rechte vorbehalten."
             },
-            fr: { // French - Placeholder
+            fr: {
                 name: "Pawanesh K. Vishwakarma",
                 lang_button: "Langues ▾",
                 theme_dark: "foncé ou clair",
@@ -665,12 +624,12 @@
                 nav_experience: "Expérience",
                 nav_education: "Éducation",
                 nav_skills: "Compétences",
-                nav_awards: "Certifications/Prix", // Modified
+                nav_awards: "Certifications/Prix",
                 nav_publications: "Publications",
                 photo_placeholder: "Image",
                 about_full: "Je suis un chercheur dévoué et passionné au Motilal Nehru National Institute of Technology Allahabad, spécialisé en vision par ordinateur. Ma recherche se concentre sur les approches multimodales pour l'analyse vidéo égocentrique. Avec une solide formation académique et une expérience pratique, je suis motivé par le défi de résoudre des problèmes complexes et de contribuer à l'avancement de l'intelligence artificielle.",
                 experience_title_s: "Senior Chercheur",
-				experience_title_s: "Junior Chercheur",
+				experience_title_j: "Junior Chercheur",
                 experience_org: "Département de CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-Inde.",
                 skills_coding: "Langages de programmation",
                 skills_web: "Développement web",
@@ -679,15 +638,14 @@
                 pub_journal: "Article de journal",
                 pub_conference: "Actes de conférence",
 				pub_poster: "présentation par affiche",
-                awards_heading: "Prix & Qualifications", // New key
-                certs_heading: "Certifications & Ateliers", // New key
+                awards_heading: "Prix & Qualifications",
+                certs_heading: "Certifications & Ateliers",
                 footer_text: "Pawanesh Kumar Vishwakarma. Tous droits réservés."
             }
         };
 
         // --- CORE SCRIPT LOGIC ---
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Theme Toggler
             const themeToggleBtn = document.getElementById('theme-toggle');
             const applyTheme = (theme) => {
                 document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -700,40 +658,29 @@
                 applyTheme(newTheme);
             });
 
-            // 2. Set Current Year in Footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
             
-            // 3. Language Switcher
             const savedLang = localStorage.getItem('language') || 'en';
             switchLanguage(savedLang);
 
-            // 4. Tabbed and Hamburger Navigation
             const menuToggle = document.getElementById('menu-toggle');
             const mainNav = document.getElementById('main-nav');
             const navButtons = document.querySelectorAll('.nav-button');
             const contentSections = document.querySelectorAll('.content-section');
 
-            // Hamburger menu toggle
             menuToggle.addEventListener('click', () => {
                 mainNav.classList.toggle('hidden');
             });
 
-            // Tab switching logic
             navButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const targetId = button.dataset.target;
-
-                    // Update button active states
                     navButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-
-                    // Show/hide content sections
                     contentSections.forEach(section => {
                         section.classList.toggle('hidden', section.id !== targetId);
                     });
-
-                    // Hide hamburger menu after selection on mobile
-                    if (window.innerWidth < 1024) { // Tailwind's lg breakpoint
+                    if (window.innerWidth < 1024) {
                         mainNav.classList.add('hidden');
                     }
                 });
@@ -755,15 +702,13 @@
         function toggleDropdown(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById(id.replace('-list', '-icon'));
-            
-            // Toggle the 'open' class for the smooth max-height transition
             content.classList.toggle('open');
-            
-            // Toggle arrow rotation (up/down)
             icon.classList.toggle('rotate-180');
         }
     </script>
 
+    <!-- === Dynamic publications loader — fetches publications.json === -->
+    <script src="publications-loader.js"></script>
+
 </body>
 </html>
-
