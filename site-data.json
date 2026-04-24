@@ -206,18 +206,18 @@
       "github": ""
     },
     {
-      "id": "poster-2025-sodhsangam",
-      "type": "poster",
-      "citation": "P. K. Vishwakarma and A. Sahu, \"Egocentric Action Recognition using Multimodal Datasets\", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.",
-      "link": "https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities",
-      "github": ""
-    },
-    {
       "type": "conference",
       "citation": "\"EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation\", in 28th - International Conference on Pattern Recognition Lyon, France [Accepted]",
       "link": "",
       "github": "",
       "id": "publications-1777024637197-wato"
+    },
+    {
+      "id": "poster-2025-sodhsangam",
+      "type": "poster",
+      "citation": "P. K. Vishwakarma and A. Sahu, \"Egocentric Action Recognition using Multimodal Datasets\", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.",
+      "link": "https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities",
+      "github": ""
     }
   ]
 }
