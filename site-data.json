@@ -1,0 +1,191 @@
+{
+  "about": {
+    "en": "I am a dedicated and passionate Research Scholar at the Motilal Nehru National Institute of Technology Allahabad, specializing in Computer Vision. My research focuses on multimodal approaches for egocentric video analysis. With a strong academic background and hands-on experience, I am driven by the challenge of solving complex problems and contributing to the advancement of artificial intelligence.",
+    "hi": "मैं मोतीलाल नेहरू राष्ट्रीय प्रौद्योगिकी संस्थान इलाहाबाद में कंप्यूटर विजन में विशेषज्ञता वाला एक समर्पित और उत्साही शोध अध्येता हूं। मेरा शोध अहंकार-केंद्रित वीडियो विश्लेषण के लिए मल्टीमॉडल दृष्टिकोण पर केंद्रित है। एक मजबूत अकादमिक पृष्ठभूमि और व्यावहारिक अनुभव के साथ, मैं जटिल समस्याओं को हल करने और कृत्रिम बुद्धिमत्ता की उन्नति में योगदान करने की चुनौती से प्रेरित हूं।",
+    "de": "Ich bin ein engagierter und leidenschaftlicher Forschungsstipendiat am Motilal Nehru National Institute of Technology Allahabad und spezialisiere mich auf Computer Vision. Meine Forschung konzentriert sich auf multimodale Ansätze für die egozentrische Videoanalyse. Mit einem starken akademischen Hintergrund und praktischer Erfahrung treibt mich die Herausforderung an, komplexe Probleme zu lösen und zur Weiterentwicklung der künstlichen Intelligenz beizutragen.",
+    "fr": "Je suis un chercheur dévoué et passionné au Motilal Nehru National Institute of Technology Allahabad, spécialisé en vision par ordinateur. Ma recherche se concentre sur les approches multimodales pour l'analyse vidéo égocentrique. Avec une solide formation académique et une expérience pratique, je suis motivé par le défi de résoudre des problèmes complexes et de contribuer à l'avancement de l'intelligence artificielle."
+  },
+  "experience": [
+    {
+      "id": "exp-srf-2025",
+      "period": "August 2025 - Current",
+      "title": "Senior Research Fellow",
+      "organization": "Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India."
+    },
+    {
+      "id": "exp-jrf-2023",
+      "period": "August 2023 - August 2025",
+      "title": "Junior Research Fellow",
+      "organization": "Department of CSE, Motilal Nehru National Institute of Technology Allahabad, Prayagraj-India."
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-phd-2023",
+      "period": "2023 - Present",
+      "degree": "Ph.D. in Computer Science & Engineering",
+      "institution": "Motilal Nehru National Institute of Technology Allahabad, Prayagraj"
+    },
+    {
+      "id": "edu-mca",
+      "period": "Post-Graduation",
+      "degree": "MCA, Computer Application",
+      "institution": "Institute of Engineering & Technology, Dr. RML University Ayodhya"
+    },
+    {
+      "id": "edu-bca",
+      "period": "Graduation",
+      "degree": "BCA, Computer Application",
+      "institution": "Dr. RML University Ayodhya"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-coding",
+      "label": "Coding Languages",
+      "color": "blue",
+      "tags": ["C/C++", "Python", "PHP", "SQL", "LaTeX"]
+    },
+    {
+      "id": "skill-web",
+      "label": "Web Development",
+      "color": "green",
+      "tags": ["HTML", "CSS", "JavaScript", "Apache", "XAMPP"]
+    },
+    {
+      "id": "skill-db",
+      "label": "Databases",
+      "color": "yellow",
+      "tags": ["MySQL", "SQLite"]
+    },
+    {
+      "id": "skill-aiml",
+      "label": "AI/ML/DL",
+      "color": "purple",
+      "tags": ["Deep Learning", "Computer Vision", "Image Processing"]
+    }
+  ],
+  "awards": [
+    {
+      "id": "award-nfobc-2025",
+      "title": "JRF Award Letter (NFOBC) (2025)",
+      "description": "National Fellowship for Backward Classes Students (NFOBC) issued by MoSJE, Govt. of India.",
+      "link": "https://nbcfdc.gov.in/nbcfdc/web/sites/default/files/2025-09/NFOBC_NETJune24_REVISED_040425_1.pdf"
+    },
+    {
+      "id": "award-ugc-jun2025",
+      "title": "UGC NET June 2025",
+      "description": "Qualified for Assistant Professor, awarded by University Grants Commission (UGC).",
+      "link": ""
+    },
+    {
+      "id": "award-ugc-dec2024",
+      "title": "UGC NET Dec 2024",
+      "description": "Awarded by University Grants Commission (UGC).",
+      "link": ""
+    },
+    {
+      "id": "award-ugc-jrf-jun2024",
+      "title": "UGC NET-JRF June 2024",
+      "description": "Qualified for Junior Research Fellowship and Assistant Professor (NFOBC/UGC).",
+      "link": ""
+    },
+    {
+      "id": "award-silver-elite-2024",
+      "title": "Silver+Elite Award (2024)",
+      "description": "The Joy of Computing using Python by NPTEL.",
+      "link": ""
+    },
+    {
+      "id": "award-ugc-dec2022",
+      "title": "UGC NET Dec 2022",
+      "description": "Qualified for Assistant Professor, awarded by University Grants Commission (UGC).",
+      "link": ""
+    },
+    {
+      "id": "award-merit-2014",
+      "title": "Merit Award (2014)",
+      "description": "High School, RBIC Siddharth Nagar.",
+      "link": ""
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-rait-2025",
+      "title": "6th International Conference on RAIT (2025)",
+      "description": "Awarded by Indian Institute of Technology (Indian School of Mines), Dhanbad.",
+      "link": ""
+    },
+    {
+      "id": "cert-hpc-mipcv-2024",
+      "title": "HPC for Medical Image Processing and Computer Vision (2024)",
+      "description": "Awarded by AICTE Training And Learning (ATAL) Academy.",
+      "link": ""
+    },
+    {
+      "id": "cert-racv-2024",
+      "title": "Recent Advances in Computer Vision (2024)",
+      "description": "Application and Implementation, awarded by National Institute of Technology Rourkela.",
+      "link": ""
+    },
+    {
+      "id": "cert-dlai8-2024",
+      "title": "International Workshop on Deep Learning and AI (DLAI8) (2024)",
+      "description": "Awarded by IIIT Bhubanswar.",
+      "link": ""
+    },
+    {
+      "id": "cert-ai-cv-2024",
+      "title": "Towards AI Enabled Computer Vision (2024)",
+      "description": "Self-Sponsored Short-Term Online Course awarded by ABV-IIITM.",
+      "link": ""
+    },
+    {
+      "id": "cert-dl-nptel-2024",
+      "title": "Deep Learning (2024)",
+      "description": "Awarded by NPTEL.",
+      "link": ""
+    },
+    {
+      "id": "cert-python-2021",
+      "title": "Programming with Python (2021)",
+      "description": "Awarded by Internshala.",
+      "link": ""
+    },
+    {
+      "id": "cert-android-2020",
+      "title": "Android App Development (2020)",
+      "description": "Awarded by Internshala.",
+      "link": ""
+    },
+    {
+      "id": "cert-java-2018",
+      "title": "Summer Training on Java (2018)",
+      "description": "Awarded by Softpro India Lucknow.",
+      "link": ""
+    }
+  ],
+  "publications": [
+    {
+      "id": "journal-2021-muktshabd",
+      "type": "journal",
+      "citation": "P. K. Vishwakarma and B. K. Bhardwaj, \"Challenges values for artificial intelligence research,\" Mukt Shabd Journal, vol. X, 2021.",
+      "link": "",
+      "github": ""
+    },
+    {
+      "id": "conference-2025-rait",
+      "type": "conference",
+      "citation": "P. K. Vishwakarma, D. K. Singh, and A. Sahu, \"Action recognition from egocentric videos using rgb + depth modalities,\" in 2025 6th International Conference on Recent Advances in Information Technology (RAIT), 2025, pp. 1-6. DOI: 10.1109/RAIT65068.2025.11089208.",
+      "link": "https://doi.org/10.1109/RAIT65068.2025.11089208",
+      "github": ""
+    },
+    {
+      "id": "poster-2025-sodhsangam",
+      "type": "poster",
+      "citation": "P. K. Vishwakarma and A. Sahu, \"Egocentric Action Recognition using Multimodal Datasets\", in Sodh Sangam organized by Motilal Nehru National Institute of Technology Allahabad [India], May 06, 2025.",
+      "link": "https://www.researchgate.net/publication/394263720_Action_Recognition_from_Egocentric_Videos_using_RGBDepth_Modalities",
+      "github": ""
+    }
+  ]
+}

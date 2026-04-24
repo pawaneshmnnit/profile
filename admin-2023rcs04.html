@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Admin — Site Content</title>
+<style>
+  :root {
+    --bg: #faf8f3; --ink: #1a1a1a; --muted: #6b6256; --line: #d8d2c4;
+    --accent: #7a2e1f; --accent-soft: #f0e6df;
+    --ok: #2d6a4f; --warn: #a8321e; --card: #ffffff; --radius: 2px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    background: var(--bg); color: var(--ink); line-height: 1.55;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px 80px; }
+  header.page {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px; margin-bottom: 24px;
+  }
+  header.page h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  header.page p { margin: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+  section.panel {
+    background: var(--card); border: 1px solid var(--line);
+    padding: 22px 26px; margin-bottom: 20px; border-radius: var(--radius);
+  }
+  section.panel h2 {
+    margin: 0 0 14px;
+    font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent);
+    font-family: 'Helvetica Neue','Arial',sans-serif; font-weight: 600;
+  }
+  label {
+    display: block; font-size: 11px;
+    font-family: 'Helvetica Neue','Arial',sans-serif;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 4px; margin-top: 14px;
+  }
+  input[type=text], input[type=password], input[type=url], select, textarea {
+    width: 100%; padding: 9px 12px;
+    border: 1px solid var(--line); background: #fcfaf5;
+    font-family: inherit; font-size: 14px; color: var(--ink);
+    border-radius: var(--radius);
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none; border-color: var(--accent); background: #fff;
+  }
+  textarea { min-height: 90px; resize: vertical; font-family: 'Georgia',serif; line-height: 1.5; }
+  textarea.tall { min-height: 140px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .row, .row-3 { grid-template-columns: 1fr; } }
+  button {
+    background: var(--ink); color: var(--bg); border: none;
+    padding: 10px 20px;
+    font-family: 'Helvetica Neue','Arial',sans-serif;
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: var(--radius);
+    transition: background .15s; margin-top: 16px;
+  }
+  button:hover:not(:disabled) { background: var(--accent); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  button.danger {
+    background: transparent; color: var(--warn); border: 1px solid var(--warn);
+    padding: 5px 11px; font-size: 10px; margin-top: 0;
+  }
+  button.danger:hover:not(:disabled) { background: var(--warn); color: #fff; }
+  button.secondary {
+    background: transparent; color: var(--ink); border: 1px solid var(--line);
+    padding: 5px 11px; font-size: 10px; margin-top: 0;
+  }
+  button.secondary:hover:not(:disabled) { background: var(--accent-soft); }
+
+  /* Tabs */
+  .tabs {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    border-bottom: 1px solid var(--line); margin-bottom: 20px; padding-bottom: 0;
+  }
+  .tabs button {
+    margin: 0; background: transparent; color: var(--muted);
+    border: none; padding: 10px 14px;
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    border-bottom: 2px solid transparent; border-radius: 0;
+    cursor: pointer;
+  }
+  .tabs button:hover { background: var(--accent-soft); color: var(--ink); }
+  .tabs button.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Item cards */
+  .item {
+    border: 1px solid var(--line); padding: 13px 15px;
+    margin-bottom: 10px; background: #fcfaf5; border-radius: var(--radius);
+  }
+  .item-main { margin-bottom: 8px; }
+  .item-main strong { font-family: inherit; }
+  .item-meta { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 8px; }
+  .item-meta a { color: var(--accent); }
+  .item-actions { display: flex; gap: 7px; }
+  .type-label {
+    display: inline-block; font-size: 10px;
+    font-family: 'Helvetica Neue',sans-serif;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: #fff; padding: 2px 7px; border-radius: var(--radius);
+    margin-right: 7px; vertical-align: middle;
+  }
+  .type-label.journal { background: #2d6a4f; }
+  .type-label.conference { background: #7a2e1f; }
+  .type-label.poster { background: #6b4c9a; }
+
+  /* Lang tabs for About */
+  .lang-tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+  .lang-tabs button {
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 4px 11px; margin: 0;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: var(--radius); cursor: pointer;
+  }
+  .lang-tabs button.active { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .lang-pane { display: none; }
+  .lang-pane.active { display: block; }
+
+  /* Status */
+  #status {
+    padding: 10px 14px; margin: 12px 0; font-size: 14px;
+    border-radius: var(--radius); display: none;
+  }
+  #status.success { display: block; background: #e8f3ee; color: var(--ok); border: 1px solid #b6d9c4; }
+  #status.error   { display: block; background: #fae9e5; color: var(--warn); border: 1px solid #e6b8ae; }
+  #status.info    { display: block; background: var(--accent-soft); color: var(--accent); border: 1px solid #d9c3b8; }
+
+  .hint { font-size: 12px; color: var(--muted); margin-top: 4px; font-style: italic; }
+  .hint a { color: var(--accent); }
+  .empty { text-align: center; padding: 20px; color: var(--muted); font-style: italic; }
+  .group-heading {
+    font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin: 18px 0 8px; padding-bottom: 4px;
+    border-bottom: 1px dashed var(--line);
+    font-family: 'Helvetica Neue',sans-serif; font-weight: 600;
+  }
+  .form-block {
+    background: #fcfaf5; border: 1px dashed var(--line);
+    padding: 14px 18px; margin-bottom: 20px; border-radius: var(--radius);
+  }
+  .form-block h3 {
+    margin: 0 0 8px; font-size: 13px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink);
+    font-family: 'Helvetica Neue',sans-serif;
+  }
+  .swatch {
+    display: inline-block; width: 14px; height: 14px;
+    border-radius: 2px; vertical-align: middle; margin-right: 6px;
+    border: 1px solid var(--line);
+  }
+  .swatch.blue   { background: #dbeafe; }
+  .swatch.green  { background: #d1fae5; }
+  .swatch.yellow { background: #fef3c7; }
+  .swatch.purple { background: #ede9fe; }
+  .swatch.red    { background: #fee2e2; }
+  .swatch.pink   { background: #fce7f3; }
+  .swatch.indigo { background: #e0e7ff; }
+  .swatch.teal   { background: #ccfbf1; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <h1>Site Content — Admin</h1>
+    <p>Edit every section of your site. Changes commit directly to GitHub.</p>
+  </header>
+
+  <div id="status"></div>
+
+  <!-- Configuration -->
+  <section class="panel" id="config-section">
+    <h2>Configuration</h2>
+    <p class="hint">Token is stored only in this browser's localStorage. Sent only to GitHub's API.</p>
+
+    <div class="row">
+      <div>
+        <label for="owner">GitHub Username</label>
+        <input type="text" id="owner" placeholder="pawaneshmnnit" />
+      </div>
+      <div>
+        <label for="repo">Repository</label>
+        <input type="text" id="repo" placeholder="profile" />
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="branch">Branch</label>
+        <input type="text" id="branch" value="main" />
+      </div>
+      <div>
+        <label for="filepath">Data File Path</label>
+        <input type="text" id="filepath" value="site-data.json" />
+      </div>
+    </div>
+    <label for="token">GitHub Personal Access Token</label>
+    <input type="password" id="token" placeholder="github_pat_..." autocomplete="off" />
+    <p class="hint">
+      Use a <strong>fine-grained token</strong> with <em>Contents: Read and write</em> for this repo.
+      <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Create one →</a>
+    </p>
+
+    <button id="loadBtn">Load Site Data</button>
+  </section>
+
+  <!-- Editor (hidden until load) -->
+  <div id="editor" style="display:none;">
+
+    <nav class="tabs" id="tabNav">
+      <button data-tab="about" class="active">About</button>
+      <button data-tab="experience">Experience</button>
+      <button data-tab="education">Education</button>
+      <button data-tab="skills">Skills</button>
+      <button data-tab="awards">Awards</button>
+      <button data-tab="certifications">Certifications</button>
+      <button data-tab="publications">Publications</button>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="panel tab-panel active" id="tab-about">
+      <h2>About Me</h2>
+      <p class="hint">Edit the About paragraph in each language. English is required; others fall back to English if empty.</p>
+
+      <div class="lang-tabs" id="aboutLangTabs">
+        <button data-lang="en" class="active">English</button>
+        <button data-lang="hi">हिंदी</button>
+        <button data-lang="de">Deutsch</button>
+        <button data-lang="fr">Français</button>
+      </div>
+      <div class="lang-pane active" data-lang="en"><textarea id="about-en" class="tall"></textarea></div>
+      <div class="lang-pane"            data-lang="hi"><textarea id="about-hi" class="tall"></textarea></div>
+      <div class="lang-pane"            data-lang="de"><textarea id="about-de" class="tall"></textarea></div>
+      <div class="lang-pane"            data-lang="fr"><textarea id="about-fr" class="tall"></textarea></div>
+
+      <button id="aboutSave">Save About & Commit</button>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="panel tab-panel" id="tab-experience">
+      <h2>Experience</h2>
+      <div class="form-block">
+        <h3 id="expFormHeading">Add Experience</h3>
+        <label for="exp-period">Period *</label>
+        <input type="text" id="exp-period" placeholder="August 2025 - Current" />
+        <label for="exp-title">Title *</label>
+        <input type="text" id="exp-title" placeholder="Senior Research Fellow" />
+        <label for="exp-org">Organization</label>
+        <input type="text" id="exp-org" placeholder="Department of CSE, MNNIT Allahabad..." />
+        <button id="expSave">Add & Commit</button>
+        <button id="expCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="experience-list"></div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="panel tab-panel" id="tab-education">
+      <h2>Education</h2>
+      <div class="form-block">
+        <h3 id="eduFormHeading">Add Education</h3>
+        <label for="edu-period">Period / Label *</label>
+        <input type="text" id="edu-period" placeholder="2023 - Present  |  Post-Graduation  |  Graduation" />
+        <label for="edu-degree">Degree / Programme *</label>
+        <input type="text" id="edu-degree" placeholder="Ph.D. in Computer Science & Engineering" />
+        <label for="edu-inst">Institution</label>
+        <input type="text" id="edu-inst" placeholder="Motilal Nehru National Institute of Technology Allahabad" />
+        <button id="eduSave">Add & Commit</button>
+        <button id="eduCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="education-list"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="panel tab-panel" id="tab-skills">
+      <h2>Skills</h2>
+      <p class="hint">Each group renders as a titled category of coloured tags.</p>
+      <div class="form-block">
+        <h3 id="skillFormHeading">Add Skill Group</h3>
+        <div class="row">
+          <div>
+            <label for="skill-label">Category Label *</label>
+            <input type="text" id="skill-label" placeholder="Coding Languages" />
+          </div>
+          <div>
+            <label for="skill-color">Color *</label>
+            <select id="skill-color">
+              <option value="blue">Blue</option>
+              <option value="green">Green</option>
+              <option value="yellow">Yellow</option>
+              <option value="purple">Purple</option>
+              <option value="red">Red</option>
+              <option value="pink">Pink</option>
+              <option value="indigo">Indigo</option>
+              <option value="teal">Teal</option>
+            </select>
+          </div>
+        </div>
+        <label for="skill-tags">Tags (comma-separated) *</label>
+        <input type="text" id="skill-tags" placeholder="C/C++, Python, PHP, SQL, LaTeX" />
+        <button id="skillSave">Add & Commit</button>
+        <button id="skillCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="skills-list"></div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="panel tab-panel" id="tab-awards">
+      <h2>Awards & Qualifications</h2>
+      <div class="form-block">
+        <h3 id="awardFormHeading">Add Award</h3>
+        <label for="award-title">Title *</label>
+        <input type="text" id="award-title" placeholder="JRF Award Letter (NFOBC) (2025)" />
+        <label for="award-desc">Description *</label>
+        <textarea id="award-desc" placeholder="National Fellowship for Backward Classes Students..."></textarea>
+        <label for="award-link">Link URL</label>
+        <input type="url" id="award-link" placeholder="https://..." />
+        <button id="awardSave">Add & Commit</button>
+        <button id="awardCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="awards-list"></div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="panel tab-panel" id="tab-certifications">
+      <h2>Certifications & Workshops</h2>
+      <div class="form-block">
+        <h3 id="certFormHeading">Add Certification</h3>
+        <label for="cert-title">Title *</label>
+        <input type="text" id="cert-title" placeholder="6th International Conference on RAIT (2025)" />
+        <label for="cert-desc">Description *</label>
+        <textarea id="cert-desc" placeholder="Awarded by Indian Institute of Technology..."></textarea>
+        <label for="cert-link">Link URL</label>
+        <input type="url" id="cert-link" placeholder="https://..." />
+        <button id="certSave">Add & Commit</button>
+        <button id="certCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="certifications-list"></div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="panel tab-panel" id="tab-publications">
+      <h2>Publications</h2>
+      <div class="form-block">
+        <h3 id="pubFormHeading">Add Publication</h3>
+        <label for="pub-type">Type *</label>
+        <select id="pub-type">
+          <option value="journal">Journal Article</option>
+          <option value="conference" selected>Conference Proceeding</option>
+          <option value="poster">Poster Presentation</option>
+        </select>
+        <label for="pub-citation">Full Citation *</label>
+        <textarea id="pub-citation" placeholder='e.g. P. K. Vishwakarma et al., "Title," in Conference Name, 2025, pp. 1-6. DOI: 10.xxxx/xxxxx.'></textarea>
+        <div class="row">
+          <div>
+            <label for="pub-link">Link URL</label>
+            <input type="url" id="pub-link" placeholder="https://doi.org/..." />
+          </div>
+          <div>
+            <label for="pub-github">GitHub URL</label>
+            <input type="url" id="pub-github" placeholder="https://github.com/..." />
+          </div>
+        </div>
+        <button id="pubSave">Add & Commit</button>
+        <button id="pubCancel" class="secondary" style="display:none; margin-left: 8px;">Cancel Edit</button>
+      </div>
+      <div id="publications-list"></div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  // ---------------------------------------------------------------
+  // STATE
+  // ---------------------------------------------------------------
+  const state = {
+    owner:'', repo:'', branch:'main', filepath:'site-data.json', token:'',
+    data: null,
+    sha: null,
+    // current-edit trackers, one per list
+    editing: { experience:null, education:null, skills:null, awards:null, certifications:null, publications:null }
+  };
+
+  const $ = id => document.getElementById(id);
+  const statusEl = $('status');
+  const setStatus = (msg, type='info') => {
+    statusEl.textContent = msg; statusEl.className = type;
+    if (type === 'success') setTimeout(() => { statusEl.className=''; statusEl.textContent=''; }, 3500);
+  };
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const uid = prefix => `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2,6)}`;
+
+  // ---------------------------------------------------------------
+  // LOCAL STORAGE FOR CONFIG
+  // ---------------------------------------------------------------
+  const LS = { owner:'sda_owner', repo:'sda_repo', branch:'sda_branch', filepath:'sda_filepath', token:'sda_token' };
+  function loadConfigUi() {
+    $('owner').value    = localStorage.getItem(LS.owner)    || '';
+    $('repo').value     = localStorage.getItem(LS.repo)     || '';
+    $('branch').value   = localStorage.getItem(LS.branch)   || 'main';
+    $('filepath').value = localStorage.getItem(LS.filepath) || 'site-data.json';
+    $('token').value    = localStorage.getItem(LS.token)    || '';
+  }
+  function saveConfigToStorage() {
+    localStorage.setItem(LS.owner, state.owner);
+    localStorage.setItem(LS.repo, state.repo);
+    localStorage.setItem(LS.branch, state.branch);
+    localStorage.setItem(LS.filepath, state.filepath);
+    localStorage.setItem(LS.token, state.token);
+  }
+
+  // ---------------------------------------------------------------
+  // UTF-8 SAFE BASE64 (GitHub API)
+  // ---------------------------------------------------------------
+  const utf8ToBase64 = str => {
+    const bytes = new TextEncoder().encode(str); let bin='';
+    for (const b of bytes) bin += String.fromCharCode(b);
+    return btoa(bin);
+  };
+  const base64ToUtf8 = b64 => {
+    const bin = atob(b64.replace(/\s/g,'')); const bytes = new Uint8Array(bin.length);
+    for (let i=0; i<bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  };
+
+  // ---------------------------------------------------------------
+  // GITHUB API
+  // ---------------------------------------------------------------
+  const apiUrl = () => `https://api.github.com/repos/${state.owner}/${state.repo}/contents/${state.filepath}`;
+  const ghHeaders = () => ({
+    'Authorization': `Bearer ${state.token}`,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  });
+
+  async function fetchFile() {
+    const url = `${apiUrl()}?ref=${encodeURIComponent(state.branch)}`;
+    const res = await fetch(url, { headers: ghHeaders() });
+    if (res.status === 404) {
+      state.sha = null; state.data = emptyData(); return;
+    }
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`Load failed (${res.status}): ${err.message || res.statusText}`);
+    }
+    const json = await res.json();
+    state.sha = json.sha;
+    try {
+      state.data = JSON.parse(base64ToUtf8(json.content));
+      // defensive: ensure sections exist
+      const empty = emptyData();
+      Object.keys(empty).forEach(k => { if (!(k in state.data)) state.data[k] = empty[k]; });
+    } catch {
+      throw new Error(`${state.filepath} exists but is not valid JSON.`);
+    }
+  }
+
+  async function commitFile(message) {
+    const body = {
+      message,
+      content: utf8ToBase64(JSON.stringify(state.data, null, 2) + '\n'),
+      branch: state.branch
+    };
+    if (state.sha) body.sha = state.sha;
+    const res = await fetch(apiUrl(), {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type':'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(`Commit failed (${res.status}): ${err.message || res.statusText}`);
+    }
+    const json = await res.json();
+    state.sha = json.content.sha;
+  }
+
+  function emptyData() {
+    return {
+      about: { en:'', hi:'', de:'', fr:'' },
+      experience: [], education: [], skills: [],
+      awards: [], certifications: [], publications: []
+    };
+  }
+
+  // ---------------------------------------------------------------
+  // TAB SWITCHING
+  // ---------------------------------------------------------------
+  function initTabs() {
+    $('tabNav').querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        $('tabNav').querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        $('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // About language tabs
+    $('aboutLangTabs').querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        $('aboutLangTabs').querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('#tab-about .lang-pane').forEach(p => p.classList.remove('active'));
+        document.querySelector('#tab-about .lang-pane[data-lang="'+btn.dataset.lang+'"]').classList.add('active');
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------
+  // ABOUT
+  // ---------------------------------------------------------------
+  function loadAboutToForm() {
+    const a = state.data.about || {};
+    $('about-en').value = a.en || '';
+    $('about-hi').value = a.hi || '';
+    $('about-de').value = a.de || '';
+    $('about-fr').value = a.fr || '';
+  }
+  async function saveAbout() {
+    const en = $('about-en').value.trim();
+    if (!en) { setStatus('English About text is required.', 'error'); return; }
+    $('aboutSave').disabled = true;
+    setStatus('Saving About…', 'info');
+    try {
+      state.data.about = {
+        en,
+        hi: $('about-hi').value.trim(),
+        de: $('about-de').value.trim(),
+        fr: $('about-fr').value.trim()
+      };
+      await commitFile('Update About section');
+      setStatus('About saved.', 'success');
+    } catch (err) {
+      setStatus(err.message, 'error');
+      try { await fetchFile(); loadAboutToForm(); } catch {}
+    } finally {
+      $('aboutSave').disabled = false;
+    }
+  }
+
+  // ---------------------------------------------------------------
+  // GENERIC LIST-BASED SECTION HANDLER
+  // Handles: experience, education, awards, certifications, publications, skills
+  // ---------------------------------------------------------------
+  function buildListHandler(opts) {
+    /* opts: {
+         section: string (data key),
+         listContainerId: string,
+         formHeadingId: string,
+         saveBtnId: string,
+         cancelBtnId: string,
+         fieldIds: { ... },   // map of DOM ids to data field names
+         readForm(): object,  // returns the new entry (minus id)
+         writeForm(entry),
+         clearForm(),
+         renderItem(entry): html string,
+         commitMessageFor(entry, editing): string
+       }
+    */
+    function render() {
+      const list = $(opts.listContainerId);
+      const items = state.data[opts.section] || [];
+      if (items.length === 0) {
+        list.innerHTML = '<div class="empty">No entries yet.</div>';
+        return;
+      }
+      list.innerHTML = items.map((it, i) => `
+        <div class="item">
+          ${opts.renderItem(it)}
+          <div class="item-actions">
+            <button class="secondary" data-edit="${esc(it.id)}">Edit</button>
+            <button class="secondary" data-up="${esc(it.id)}" ${i===0 ? 'disabled' : ''}>↑</button>
+            <button class="secondary" data-down="${esc(it.id)}" ${i===items.length-1 ? 'disabled' : ''}>↓</button>
+            <button class="danger" data-del="${esc(it.id)}">Delete</button>
+          </div>
+        </div>`).join('');
+
+      list.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', () => del(b.dataset.del)));
+      list.querySelectorAll('[data-edit]').forEach(b => b.addEventListener('click', () => startEdit(b.dataset.edit)));
+      list.querySelectorAll('[data-up]').forEach(b => b.addEventListener('click', () => move(b.dataset.up, -1)));
+      list.querySelectorAll('[data-down]').forEach(b => b.addEventListener('click', () => move(b.dataset.down, 1)));
+    }
+
+    function startEdit(id) {
+      const it = (state.data[opts.section] || []).find(x => x.id === id);
+      if (!it) return;
+      state.editing[opts.section] = id;
+      opts.writeForm(it);
+      $(opts.formHeadingId).textContent = 'Edit Entry';
+      $(opts.saveBtnId).textContent = 'Update & Commit';
+      $(opts.cancelBtnId).style.display = 'inline-block';
+      $(opts.formHeadingId).scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    function cancelEdit() {
+      state.editing[opts.section] = null;
+      opts.clearForm();
+      $(opts.formHeadingId).textContent = opts.addHeading;
+      $(opts.saveBtnId).textContent = 'Add & Commit';
+      $(opts.cancelBtnId).style.display = 'none';
+    }
+
+    async function save() {
+      let entry;
+      try { entry = opts.readForm(); } catch (e) { setStatus(e.message, 'error'); return; }
+      if (state.editing[opts.section]) {
+        entry.id = state.editing[opts.section];
+      } else {
+        entry.id = uid(opts.section);
+      }
+      $(opts.saveBtnId).disabled = true;
+      setStatus(state.editing[opts.section] ? 'Updating…' : 'Adding…', 'info');
+      try {
+        const items = state.data[opts.section] = state.data[opts.section] || [];
+        if (state.editing[opts.section]) {
+          const idx = items.findIndex(x => x.id === entry.id);
+          if (idx !== -1) items[idx] = entry;
+        } else {
+          items.push(entry);
+        }
+        await commitFile(opts.commitMessageFor(entry, !!state.editing[opts.section]));
+        setStatus('Saved.', 'success');
+        cancelEdit();
+        render();
+      } catch (err) {
+        setStatus(err.message + ' Reloading…', 'error');
+        try { await fetchFile(); render(); } catch {}
+      } finally {
+        $(opts.saveBtnId).disabled = false;
+      }
+    }
+
+    async function del(id) {
+      const items = state.data[opts.section] || [];
+      const it = items.find(x => x.id === id);
+      if (!it) return;
+      if (!confirm('Delete this entry? This commits to GitHub.')) return;
+      const backup = items.slice();
+      state.data[opts.section] = items.filter(x => x.id !== id);
+      setStatus('Deleting…', 'info');
+      try {
+        await commitFile(`Remove ${opts.section} entry`);
+        setStatus('Deleted.', 'success');
+        render();
+      } catch (err) {
+        state.data[opts.section] = backup;
+        setStatus(err.message, 'error');
+      }
+    }
+
+    async function move(id, delta) {
+      const items = state.data[opts.section] || [];
+      const idx = items.findIndex(x => x.id === id);
+      if (idx === -1) return;
+      const newIdx = idx + delta;
+      if (newIdx < 0 || newIdx >= items.length) return;
+      const backup = items.slice();
+      [items[idx], items[newIdx]] = [items[newIdx], items[idx]];
+      setStatus('Reordering…', 'info');
+      try {
+        await commitFile(`Reorder ${opts.section} entries`);
+        setStatus('Reordered.', 'success');
+        render();
+      } catch (err) {
+        state.data[opts.section] = backup;
+        setStatus(err.message, 'error');
+      }
+    }
+
+    $(opts.saveBtnId).addEventListener('click', save);
+    $(opts.cancelBtnId).addEventListener('click', cancelEdit);
+
+    return { render };
+  }
+
+  // ---------------------------------------------------------------
+  // EXPERIENCE handler
+  // ---------------------------------------------------------------
+  const expHandler = buildListHandler({
+    section: 'experience',
+    listContainerId: 'experience-list',
+    formHeadingId: 'expFormHeading',
+    addHeading: 'Add Experience',
+    saveBtnId: 'expSave',
+    cancelBtnId: 'expCancel',
+    readForm() {
+      const period = $('exp-period').value.trim();
+      const title  = $('exp-title').value.trim();
+      if (!period || !title) throw new Error('Period and title are required.');
+      return { period, title, organization: $('exp-org').value.trim() };
+    },
+    writeForm(e) {
+      $('exp-period').value = e.period || '';
+      $('exp-title').value  = e.title || '';
+      $('exp-org').value    = e.organization || '';
+    },
+    clearForm() { $('exp-period').value=''; $('exp-title').value=''; $('exp-org').value=''; },
+    renderItem(e) {
+      return `
+        <div class="item-main"><strong>${esc(e.title)}</strong></div>
+        <div class="item-meta">${esc(e.period)}${e.organization ? ' · ' + esc(e.organization) : ''}</div>`;
+    },
+    commitMessageFor(e, editing) { return (editing ? 'Update' : 'Add') + ' experience: ' + e.title.slice(0, 50); }
+  });
+
+  // ---------------------------------------------------------------
+  // EDUCATION handler
+  // ---------------------------------------------------------------
+  const eduHandler = buildListHandler({
+    section: 'education',
+    listContainerId: 'education-list',
+    formHeadingId: 'eduFormHeading',
+    addHeading: 'Add Education',
+    saveBtnId: 'eduSave',
+    cancelBtnId: 'eduCancel',
+    readForm() {
+      const period = $('edu-period').value.trim();
+      const degree = $('edu-degree').value.trim();
+      if (!period || !degree) throw new Error('Period and degree are required.');
+      return { period, degree, institution: $('edu-inst').value.trim() };
+    },
+    writeForm(e) {
+      $('edu-period').value = e.period || '';
+      $('edu-degree').value = e.degree || '';
+      $('edu-inst').value   = e.institution || '';
+    },
+    clearForm() { $('edu-period').value=''; $('edu-degree').value=''; $('edu-inst').value=''; },
+    renderItem(e) {
+      return `
+        <div class="item-main"><strong>${esc(e.degree)}</strong></div>
+        <div class="item-meta">${esc(e.period)}${e.institution ? ' · ' + esc(e.institution) : ''}</div>`;
+    },
+    commitMessageFor(e, editing) { return (editing ? 'Update' : 'Add') + ' education: ' + e.degree.slice(0, 50); }
+  });
+
+  // ---------------------------------------------------------------
+  // SKILLS handler
+  // ---------------------------------------------------------------
+  const skillHandler = buildListHandler({
+    section: 'skills',
+    listContainerId: 'skills-list',
+    formHeadingId: 'skillFormHeading',
+    addHeading: 'Add Skill Group',
+    saveBtnId: 'skillSave',
+    cancelBtnId: 'skillCancel',
+    readForm() {
+      const label = $('skill-label').value.trim();
+      const color = $('skill-color').value;
+      const tagsRaw = $('skill-tags').value.trim();
+      if (!label || !tagsRaw) throw new Error('Label and at least one tag are required.');
+      const tags = tagsRaw.split(',').map(t => t.trim()).filter(Boolean);
+      return { label, color, tags };
+    },
+    writeForm(e) {
+      $('skill-label').value = e.label || '';
+      $('skill-color').value = e.color || 'blue';
+      $('skill-tags').value  = (e.tags || []).join(', ');
+    },
+    clearForm() { $('skill-label').value=''; $('skill-color').value='blue'; $('skill-tags').value=''; },
+    renderItem(e) {
+      const tagsHtml = (e.tags || []).map(t => esc(t)).join(', ');
+      return `
+        <div class="item-main"><span class="swatch ${esc(e.color)}"></span><strong>${esc(e.label)}</strong></div>
+        <div class="item-meta">${tagsHtml}</div>`;
+    },
+    commitMessageFor(e, editing) { return (editing ? 'Update' : 'Add') + ' skill group: ' + e.label.slice(0, 50); }
+  });
+
+  // ---------------------------------------------------------------
+  // AWARDS handler
+  // ---------------------------------------------------------------
+  const awardHandler = buildListHandler({
+    section: 'awards',
+    listContainerId: 'awards-list',
+    formHeadingId: 'awardFormHeading',
+    addHeading: 'Add Award',
+    saveBtnId: 'awardSave',
+    cancelBtnId: 'awardCancel',
+    readForm() {
+      const title = $('award-title').value.trim();
+      const description = $('award-desc').value.trim();
+      if (!title || !description) throw new Error('Title and description are required.');
+      return { title, description, link: $('award-link').value.trim() };
+    },
+    writeForm(e) {
+      $('award-title').value = e.title || '';
+      $('award-desc').value  = e.description || '';
+      $('award-link').value  = e.link || '';
+    },
+    clearForm() { $('award-title').value=''; $('award-desc').value=''; $('award-link').value=''; },
+    renderItem(e) {
+      return `
+        <div class="item-main"><strong>${esc(e.title)}</strong></div>
+        <div class="item-meta">${esc(e.description)}${e.link ? ' · <a href="'+esc(e.link)+'" target="_blank" rel="noopener">link</a>' : ''}</div>`;
+    },
+    commitMessageFor(e, editing) { return (editing ? 'Update' : 'Add') + ' award: ' + e.title.slice(0, 50); }
+  });
+
+  // ---------------------------------------------------------------
+  // CERTIFICATIONS handler
+  // ---------------------------------------------------------------
+  const certHandler = buildListHandler({
+    section: 'certifications',
+    listContainerId: 'certifications-list',
+    formHeadingId: 'certFormHeading',
+    addHeading: 'Add Certification',
+    saveBtnId: 'certSave',
+    cancelBtnId: 'certCancel',
+    readForm() {
+      const title = $('cert-title').value.trim();
+      const description = $('cert-desc').value.trim();
+      if (!title || !description) throw new Error('Title and description are required.');
+      return { title, description, link: $('cert-link').value.trim() };
+    },
+    writeForm(e) {
+      $('cert-title').value = e.title || '';
+      $('cert-desc').value  = e.description || '';
+      $('cert-link').value  = e.link || '';
+    },
+    clearForm() { $('cert-title').value=''; $('cert-desc').value=''; $('cert-link').value=''; },
+    renderItem(e) {
+      return `
+        <div class="item-main"><strong>${esc(e.title)}</strong></div>
+        <div class="item-meta">${esc(e.description)}${e.link ? ' · <a href="'+esc(e.link)+'" target="_blank" rel="noopener">link</a>' : ''}</div>`;
+    },
+    commitMessageFor(e, editing) { return (editing ? 'Update' : 'Add') + ' certification: ' + e.title.slice(0, 50); }
+  });
+
+  // ---------------------------------------------------------------
+  // PUBLICATIONS handler
+  // ---------------------------------------------------------------
+  const TYPE_LABELS = { journal:'Journal', conference:'Conference', poster:'Poster' };
+  const pubHandler = buildListHandler({
+    section: 'publications',
+    listContainerId: 'publications-list',
+    formHeadingId: 'pubFormHeading',
+    addHeading: 'Add Publication',
+    saveBtnId: 'pubSave',
+    cancelBtnId: 'pubCancel',
+    readForm() {
+      const type = $('pub-type').value;
+      const citation = $('pub-citation').value.trim();
+      if (!citation) throw new Error('Citation is required.');
+      if (!['journal','conference','poster'].includes(type)) throw new Error('Invalid type.');
+      return { type, citation, link: $('pub-link').value.trim(), github: $('pub-github').value.trim() };
+    },
+    writeForm(e) {
+      $('pub-type').value     = e.type || 'conference';
+      $('pub-citation').value = e.citation || '';
+      $('pub-link').value     = e.link || '';
+      $('pub-github').value   = e.github || '';
+    },
+    clearForm() {
+      $('pub-type').value='conference'; $('pub-citation').value='';
+      $('pub-link').value=''; $('pub-github').value='';
+    },
+    renderItem(e) {
+      return `
+        <div class="item-main">
+          <span class="type-label ${esc(e.type)}">${esc(TYPE_LABELS[e.type] || e.type)}</span>
+          ${esc(e.citation)}
+        </div>
+        ${(e.link || e.github)
+          ? '<div class="item-meta">' +
+              (e.link ? '<a href="'+esc(e.link)+'" target="_blank" rel="noopener">link</a>' : '') +
+              (e.link && e.github ? ' · ' : '') +
+              (e.github ? '<a href="'+esc(e.github)+'" target="_blank" rel="noopener">github</a>' : '') +
+            '</div>'
+          : ''}`;
+    },
+    commitMessageFor(e, editing) {
+      const m = e.citation.match(/"([^"]+)"/);
+      const title = m ? m[1] : e.type;
+      return (editing ? 'Update' : 'Add') + ' ' + e.type + ': ' + title.slice(0, 50);
+    }
+  });
+
+  // ---------------------------------------------------------------
+  // INITIAL LOAD
+  // ---------------------------------------------------------------
+  async function handleLoad() {
+    state.owner    = $('owner').value.trim();
+    state.repo     = $('repo').value.trim();
+    state.branch   = $('branch').value.trim() || 'main';
+    state.filepath = $('filepath').value.trim() || 'site-data.json';
+    state.token    = $('token').value.trim();
+    if (!state.owner || !state.repo || !state.token) {
+      setStatus('Owner, repo, and token are all required.', 'error'); return;
+    }
+    saveConfigToStorage();
+    setStatus('Loading site data…', 'info');
+    try {
+      await fetchFile();
+      $('editor').style.display = '';
+      loadAboutToForm();
+      expHandler.render();
+      eduHandler.render();
+      skillHandler.render();
+      awardHandler.render();
+      certHandler.render();
+      pubHandler.render();
+      const counts = [
+        state.data.experience.length + ' exp',
+        state.data.education.length + ' edu',
+        state.data.skills.length + ' skills',
+        state.data.awards.length + ' awards',
+        state.data.certifications.length + ' certs',
+        state.data.publications.length + ' pubs'
+      ].join(', ');
+      setStatus('Loaded: ' + counts, 'success');
+    } catch (err) {
+      setStatus(err.message, 'error');
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadConfigUi();
+    initTabs();
+    $('loadBtn').addEventListener('click', handleLoad);
+    $('aboutSave').addEventListener('click', saveAbout);
+  });
+})();
+</script>
+</body>
+</html>
