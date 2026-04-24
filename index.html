@@ -229,15 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // FIXED function
 function switchLanguage(lang) {
-    if (!translations[lang]) return;
-
-    document.querySelectorAll('[data-translate-key]').forEach(el => {
-        const key = el.getAttribute('data-translate-key');
-        if (translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
-
     localStorage.setItem('language', lang);
 
     if (window.SiteLoader?.setLanguage) {
