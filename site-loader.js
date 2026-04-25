@@ -20,9 +20,26 @@
   var data = null;
   var currentLang = 'en';
 
+  // All container IDs the loader manages — used for error messaging
+  var ALL_CONTAINERS = [
+    'about-text',
+    'experience-items', 'education-items',
+    'skills-groups',
+    'awards-items', 'certifications-items',
+    'journal-items', 'conference-items', 'poster-items'
+  ];
+
   function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function showErrorEverywhere(message) {
+    var html = '<p style="color:#9b3a1f; font-style:italic; padding:1rem; border:1px dashed #9b3a1f;">' + escapeHtml(message) + '</p>';
+    ALL_CONTAINERS.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = html;
     });
   }
 
@@ -142,7 +159,6 @@
     data.publications.forEach(function (p) {
       if (groups[p.type]) groups[p.type].push(p);
     });
-    // newest first by 4-digit year in citation
     var yearOf = function (p) {
       var m = p.citation && p.citation.match(/\b(19|20)\d{2}\b/);
       return m ? parseInt(m[0], 10) : 0;
@@ -201,9 +217,17 @@
   // ---------- BOOT ----------
   function fetchAndRender() {
     currentLang = localStorage.getItem('language') || 'en';
+
+    // Detect file:// protocol — fetch will fail silently otherwise
+    if (window.location.protocol === 'file:') {
+      console.error('site-loader: cannot fetch local files when opened via file://. Run a local web server (python3 -m http.server) or push to GitHub Pages.');
+      showErrorEverywhere('This page must be served by a web server (not opened directly from your filesystem). Either push to GitHub Pages, or run "python3 -m http.server" in this folder and open http://localhost:8000/');
+      return;
+    }
+
     fetch(CONFIG.dataUrl + '?t=' + Date.now())
       .then(function (res) {
-        if (!res.ok) throw new Error('HTTP ' + res.status);
+        if (!res.ok) throw new Error('HTTP ' + res.status + ' fetching ' + CONFIG.dataUrl);
         return res.json();
       })
       .then(function (json) {
@@ -218,8 +242,7 @@
       })
       .catch(function (err) {
         console.error('site-loader:', err);
-        var box = document.getElementById('about-text');
-        if (box) box.textContent = 'Could not load site content.';
+        showErrorEverywhere('Could not load site-data.json — ' + err.message);
       });
   }
 
