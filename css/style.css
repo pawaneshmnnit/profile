@@ -253,10 +253,44 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
 .pub-group:first-of-type { margin-top: .25rem; }
 
 .pub {
-  padding: 1.15rem 0;
+  padding: 1.4rem 0;
   border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 1.5rem;
+  align-items: start;
 }
 .pub:last-of-type { border-bottom: none; }
+
+/* teaser / architecture figure */
+.pub__figure {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  aspect-ratio: 16 / 10;
+  display: flex; align-items: center; justify-content: center;
+}
+.pub__figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* graceful placeholder shown if the image file is missing */
+.pub__figure.is-empty {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg,
+      color-mix(in srgb, var(--accent) 6%, transparent) 0 10px,
+      transparent 10px 20px),
+    var(--bg-soft);
+}
+.pub__figure.is-empty::after {
+  content: attr(data-label);
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .03em;
+  color: var(--text-mute);
+  padding: .3rem .6rem; border: 1px dashed var(--border); border-radius: 6px;
+  background: var(--surface);
+}
+
+.pub__body { min-width: 0; }
 
 .pub__title {
   margin: 0 0 .35rem; font-family: var(--font-display);
@@ -273,6 +307,11 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
   color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
   padding: .1rem .5rem; border-radius: 999px; vertical-align: middle;
 }
+a.pub__badge:hover { text-decoration: none; background: color-mix(in srgb, var(--accent) 22%, transparent); }
+.pub__badge--award {
+  color: #a15c00; background: color-mix(in srgb, #e0a52a 22%, transparent);
+}
+html[data-theme="dark"] .pub__badge--award { color: #f0c674; background: color-mix(in srgb, #e0a52a 16%, transparent); }
 
 .pub__actions { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
 .pub__link, .pub__bib-btn {
@@ -347,6 +386,9 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
 
   .about__cols { grid-template-columns: 1fr; gap: 1.6rem; }
   .contact { grid-template-columns: 1fr; }
+
+  .pub { grid-template-columns: 1fr; gap: .9rem; }
+  .pub__figure { max-width: 320px; }
   .news__item { grid-template-columns: 56px 1fr; gap: .7rem; }
   .site-footer { flex-direction: column; align-items: flex-start; }
 }
