@@ -298,7 +298,7 @@ html[data-theme="dark"] .theme-toggle__moon { display: block; }
 }
 .pub__authors { margin: 0 0 .2rem; font-size: .93rem; color: var(--text-soft); }
 .pub__authors strong { color: var(--text); font-weight: 700; }
-.pub__venue { margin: 0 0 .7rem; font-size: .9rem; color: var(--text-mute); font-style: italic; background-color:whitesmoke; border-radius:8px; font-family:New Times Roman;}
+.pub__venue { margin: 0 0 .7rem; font-size: .9rem; color:teal; font-style: italic; background-color:whitesmoke; border-radius:8px; font-family:New Times Roman;}
 
 .pub__badge {
   display: inline-block; margin-left: .35rem;
