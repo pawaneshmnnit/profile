@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pawanesh Kumar Vishwakarma: News</title>
+    <link>https://pawaneshmnnit.github.io/profile/</link>
+    <description>News and new publications from Pawanesh Kumar Vishwakarma, Ph.D. Research Scholar at MNNIT Allahabad (egocentric vision, embodied AI, multimodal learning).</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://pawaneshmnnit.github.io/profile/feed.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>SYNAPSE published in ICPR 2026 International Workshops</title>
+      <link>https://link.springer.com/chapter/10.1007/978-3-032-39379-1_10</link>
+      <guid isPermaLink="true">https://link.springer.com/chapter/10.1007/978-3-032-39379-1_10</guid>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Co-authored paper "SYNAPSE: Symmetric Neurograph Augmentation via Probabilistic Diffusion Learning for fMRI-Based ADHD Identification" is published in the ICPR 2026 International Workshops proceedings (Springer, LNCS vol. 17110, pp. 132-146).</description>
+    </item>
+
+    <item>
+      <title>EgoHAnG receives a Reproducibility Badge at ICPR 2026</title>
+      <link>https://iapr-tc22-rrl.github.io/icpr2026/results/</link>
+      <guid isPermaLink="true">https://iapr-tc22-rrl.github.io/icpr2026/results/</guid>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Our paper EgoHAnG received a Reproducibility Badge in the 1st ICPR 2026 RRPR Reproducibility Badge initiative (Computer and Robot Vision section), recognizing the reproducibility of the work and the availability of its research artifacts.</description>
+    </item>
+
+    <item>
+      <title>EgoHAnG published in ICPR 2026 proceedings</title>
+      <link>https://link.springer.com/chapter/10.1007/978-3-032-31441-3_5</link>
+      <guid isPermaLink="true">https://link.springer.com/chapter/10.1007/978-3-032-31441-3_5</guid>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Our paper "EgoHAnG: Graph-Enhanced Horizon Aware Egocentric Action Anticipation" is published in the ICPR 2026 proceedings (Springer, LNCS vol. 16820, pp. 65-80).</description>
+    </item>
+
+    <item>
+      <title>DEFT-DPT published in IEEE TCSVT</title>
+      <link>https://doi.org/10.1109/TCSVT.2026.3707206</link>
+      <guid isPermaLink="true">https://doi.org/10.1109/TCSVT.2026.3707206</guid>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Our paper "DEFT-DPT: A Lightweight Multimodal Framework for Egocentric Video Action Recognition" is published in IEEE Transactions on Circuits and Systems for Video Technology (TCSVT).</description>
+    </item>
+
+    <item>
+      <title>Began as Senior Research Fellow at MNNIT Allahabad</title>
+      <link>https://pawaneshmnnit.github.io/profile/#news</link>
+      <guid isPermaLink="false">profile-news-2025-srf</guid>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <description>Began serving as Senior Research Fellow in the Department of CSE, MNNIT Allahabad.</description>
+    </item>
+
+    <item>
+      <title>Qualified UGC NET June 2025 and received the NFOBC JRF award</title>
+      <link>https://pawaneshmnnit.github.io/profile/#news</link>
+      <guid isPermaLink="false">profile-news-2025-ugc-net</guid>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <description>Qualified UGC NET June 2025 for Assistant Professor, and received the National Fellowship for OBC (NFOBC) JRF award (MoSJE, Govt. of India).</description>
+    </item>
+
+    <item>
+      <title>Presented at RAIT 2025, IIT (ISM) Dhanbad</title>
+      <link>https://doi.org/10.1109/RAIT65068.2025.11089208</link>
+      <guid isPermaLink="true">https://doi.org/10.1109/RAIT65068.2025.11089208</guid>
+      <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
+      <description>Presented "Action Recognition from Egocentric Videos using RGB + Depth Modalities" at the 6th RAIT 2025, IIT (ISM) Dhanbad.</description>
+    </item>
+  </channel>
+</rss>
