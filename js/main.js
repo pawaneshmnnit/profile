@@ -77,6 +77,24 @@
     });
   });
 
+     /* ---------- dblp paper count (live, with static fallback) ---------- */
+  var dblpEl = document.getElementById("dblpCount");
+  if (dblpEl && window.fetch) {
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 6000);
+    fetch("https://dblp.org/pid/442/3253.xml", ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error("dblp " + r.status); return r.text(); })
+      .then(function (xml) {
+        var doc = new DOMParser().parseFromString(xml, "application/xml");
+        var root = doc.documentElement;
+        var n = parseInt(root && root.getAttribute("n"), 10);
+        if (!isNaN(n) && n >= 0) {
+          dblpEl.textContent = n + " indexed " + (n === 1 ? "paper" : "papers");
+        }
+      })
+      .catch(function () { /* keep the static text already in the page */ })
+      .then(function () { clearTimeout(timer); });
+  }
   /* ---------- Footer year ---------- */
   var yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
