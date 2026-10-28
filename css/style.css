@@ -7,7 +7,7 @@
   color-scheme: light dark;
 
   /* Light theme */
-  --bg:        #fbfaf7;
+  --bg:        whitesmoke;
   --bg-soft:   #f2efe9;
   --surface:   #ffffff;
   --text:      #1b1d21;
@@ -30,7 +30,7 @@ html[data-theme="dark"] {
   --bg:        #0e1116;
   --bg-soft:   #151a21;
   --surface:   #141a21;
-  --text:      #e8e9ec;
+  --text:      pink;
   --text-soft: #a9afb8;
   --text-mute: #757c86;
   --border:    #242c36;
